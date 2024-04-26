@@ -1,0 +1,149 @@
+#!/bin/bash
+
+defitem=1
+
+while true; do
+load_configs
+dialog_menu_item $defitem "Dynarec settings" "" \
+	"1" "\Z6DYNAREC_ALIGNED_ATOMICS\Z6=\Z5$BOX64_DYNAREC_ALIGNED_ATOMICS" \
+	"2" "\Z6BOX64_DYNAREC_BIGBLOCK\Z6=\Z5$BOX64_DYNAREC_BIGBLOCK" \
+	"3" "\Z6BOX86_DYNAREC_BIGBLOCK\Z6=\Z5$BOX86_DYNAREC_BIGBLOCK" \
+	"4" "\Z6DYNAREC_FASTNAN\Z6=\Z5$BOX64_DYNAREC_FASTNAN" \
+	"5" "\Z6DYNAREC_SAFEFLAGS\Z6=\Z5$BOX64_DYNAREC_SAFEFLAGS" \
+	"6" "\Z6DYNAREC_STRONGMEM\Z6=\Z5$BOX64_DYNAREC_STRONGMEM" \
+	"7" "\Z6DYNAREC_WAIT\Z5=\Z5$BOX64_DYNAREC_WAIT" \
+	"8" "\Z6DYNAREC_X87DOUBLE\Z6=\Z5$BOX64_DYNAREC_X87DOUBLE" \
+	"9" "\Z6DYNAREC_CALLRET\Z6=\Z5$BOX64_DYNAREC_CALLRET" \
+	"10" "\Z6Switch to dynarec configurator" \
+	"11" "\Z6Reset to default"
+defitem=$?
+case $defitem in
+1)
+	case "$BOX64_DYNAREC_ALIGNED_ATOMICS" in
+	"") echo "export BOX86_DYNAREC_ALIGNED_ATOMICS=0
+export BOX64_DYNAREC_ALIGNED_ATOMICS=0">$PREFIX/glibc/opt/conf/dynarec/aligned_atomics.conf ;;
+	0) echo "export BOX86_DYNAREC_ALIGNED_ATOMICS=1
+export BOX64_DYNAREC_ALIGNED_ATOMICS=1">$PREFIX/glibc/opt/conf/dynarec/aligned_atomics.conf ;;
+	1) echo "unset BOX86_DYNAREC_ALIGNED_ATOMICS
+unset BOX64_DYNAREC_ALIGNED_ATOMICS">$PREFIX/glibc/opt/conf/dynarec/aligned_atomics.conf ;;
+	esac
+;;
+
+2)
+	case "$BOX64_DYNAREC_BIGBLOCK" in
+	"") echo "export BOX86_DYNAREC_BIGBLOCK=$BOX86_DYNAREC_BIGBLOCK
+export BOX64_DYNAREC_BIGBLOCK=0">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	0) echo "export BOX86_DYNAREC_BIGBLOCK=$BOX86_DYNAREC_BIGBLOCK
+export BOX64_DYNAREC_BIGBLOCK=1">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	1) echo "export BOX86_DYNAREC_BIGBLOCK=$BOX86_DYNAREC_BIGBLOCK
+export BOX64_DYNAREC_BIGBLOCK=2">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	2) echo "export BOX86_DYNAREC_BIGBLOCK=$BOX86_DYNAREC_BIGBLOCK
+export BOX64_DYNAREC_BIGBLOCK=">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	esac
+;;
+3)
+	case "$BOX86_DYNAREC_BIGBLOCK" in
+	"") echo "export BOX86_DYNAREC_BIGBLOCK=0
+export BOX64_DYNAREC_BIGBLOCK=$BOX64_DYNAREC_BIGBLOCK">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	0) echo "export BOX86_DYNAREC_BIGBLOCK=1
+export BOX64_DYNAREC_BIGBLOCK=$BOX64_DYNAREC_BIGBLOCK">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	1) echo "export BOX86_DYNAREC_BIGBLOCK=2
+export BOX64_DYNAREC_BIGBLOCK=$BOX64_DYNAREC_BIGBLOCK">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	2) echo "export BOX86_DYNAREC_BIGBLOCK=
+export BOX64_DYNAREC_BIGBLOCK=$BOX64_DYNAREC_BIGBLOCK">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf ;;
+	esac
+;;
+4)
+	case "$BOX64_DYNAREC_FASTNAN" in
+	"") echo "export BOX86_DYNAREC_FASTNAN=0
+export BOX64_DYNAREC_FASTNAN=0">$PREFIX/glibc/opt/conf/dynarec/fastnan.conf ;;
+	0) echo "export BOX86_DYNAREC_FASTNAN=1
+export BOX64_DYNAREC_FASTNAN=1">$PREFIX/glibc/opt/conf/dynarec/fastnan.conf ;;
+	1) echo "unset BOX86_DYNAREC_FASTNAN
+unset BOX64_DYNAREC_FASTNAN">$PREFIX/glibc/opt/conf/dynarec/fastnan.conf ;;
+	esac
+;;
+5)
+	case "$BOX64_DYNAREC_SAFEFLAGS" in
+	"") echo "export BOX86_DYNAREC_SAFEFLAGS=0
+export BOX64_DYNAREC_SAFEFLAGS=0">$PREFIX/glibc/opt/conf/dynarec/safeflags.conf ;;
+	0) echo "export BOX86_DYNAREC_SAFEFLAGS=1
+export BOX64_DYNAREC_SAFEFLAGS=1">$PREFIX/glibc/opt/conf/dynarec/safeflags.conf ;;
+	1) echo "export BOX86_DYNAREC_SAFEFLAGS=2
+export BOX64_DYNAREC_SAFEFLAGS=2">$PREFIX/glibc/opt/conf/dynarec/safeflags.conf ;;
+	2) echo "unset BOX86_DYNAREC_SAFEFLAGS
+unset BOX64_DYNAREC_SAFEFLAGS">$PREFIX/glibc/opt/conf/dynarec/safeflags.conf ;;
+	esac
+;;
+6)
+	case "$BOX64_DYNAREC_STRONGMEM" in
+	"") echo "export BOX86_DYNAREC_STRONGMEM=0
+export BOX64_DYNAREC_STRONGMEM=0">$PREFIX/glibc/opt/conf/dynarec/strongmem.conf ;;
+	0) echo "export BOX86_DYNAREC_STRONGMEM=1
+export BOX64_DYNAREC_STRONGMEM=1">$PREFIX/glibc/opt/conf/dynarec/strongmem.conf ;;
+	1) echo "export BOX86_DYNAREC_STRONGMEM=2
+export BOX64_DYNAREC_STRONGMEM=2">$PREFIX/glibc/opt/conf/dynarec/strongmem.conf ;;
+	2) echo "export BOX86_DYNAREC_STRONGMEM=3
+export BOX64_DYNAREC_STRONGMEM=3">$PREFIX/glibc/opt/conf/dynarec/strongmem.conf ;;
+	3) echo "unset BOX86_DYNAREC_STRONGMEM
+unset BOX64_DYNAREC_STRONGMEM">$PREFIX/glibc/opt/conf/dynarec/strongmem.conf ;;
+	esac
+;;
+7)
+	case "$BOX64_DYNAREC_WAIT" in
+	"") echo "export BOX86_DYNAREC_WAIT=0
+export BOX64_DYNAREC_WAIT=0">$PREFIX/glibc/opt/conf/dynarec/wait.conf ;;
+	0) echo "export BOX86_DYNAREC_WAIT=1
+export BOX64_DYNAREC_WAIT=1">$PREFIX/glibc/opt/conf/dynarec/wait.conf ;;
+	1) echo "unset BOX86_DYNAREC_WAIT
+unset BOX64_DYNAREC_WAIT">$PREFIX/glibc/opt/conf/dynarec/wait.conf ;;
+	esac
+;;
+8)
+	case "$BOX64_DYNAREC_X87DOUBLE" in
+	"") echo "export BOX86_DYNAREC_X87DOUBLE=0
+export BOX64_DYNAREC_X87DOUBLE=0">$PREFIX/glibc/opt/conf/dynarec/x87double.conf ;;
+	0) echo "export BOX86_DYNAREC_X87DOUBLE=1
+export BOX64_DYNAREC_X87DOUBLE=1">$PREFIX/glibc/opt/conf/dynarec/x87double.conf ;;
+	1) echo "unset BOX86_DYNAREC_X87DOUBLE
+unset BOX64_DYNAREC_X87DOUBLE">$PREFIX/glibc/opt/conf/dynarec/x87double.conf ;;
+	esac
+;;
+9)
+	case "$BOX64_DYNAREC_CALLRET" in
+	"") echo "export BOX86_DYNAREC_CALLRET=0
+export BOX64_DYNAREC_CALLRET=0">$PREFIX/glibc/opt/conf/dynarec/callret.conf ;;
+	0) echo "export BOX86_DYNAREC_CALLRET=1
+export BOX64_DYNAREC_CALLRET=1">$PREFIX/glibc/opt/conf/dynarec/callret.conf ;;
+	1) echo "unset BOX86_DYNAREC_CALLRET
+unset BOX64_DYNAREC_CALLRET">$PREFIX/glibc/opt/conf/dynarec/callret.conf ;;
+	esac
+;;
+11)
+	echo "unset BOX86_DYNAREC_ALIGNED_ATOMICS
+unset BOX64_DYNAREC_ALIGNED_ATOMICS">$PREFIX/glibc/opt/conf/dynarec/aligned_atomics.conf
+	echo "export BOX86_DYNAREC_BIGBLOCK=0
+export BOX64_DYNAREC_BIGBLOCK=2">$PREFIX/glibc/opt/conf/dynarec/bigblock.conf
+	echo "export BOX86_DYNAREC_FASTNAN=0
+export BOX64_DYNAREC_FASTNAN=0">$PREFIX/glibc/opt/conf/dynarec/fastnan.conf
+	echo "unset BOX86_DYNAREC_SAFEFLAGS
+unset BOX64_DYNAREC_SAFEFLAGS">$PREFIX/glibc/opt/conf/dynarec/safeflags.conf
+	echo "unset BOX86_DYNAREC_STRONGMEM
+unset BOX64_DYNAREC_STRONGMEM">$PREFIX/glibc/opt/conf/dynarec/strongmem.conf
+	echo "unset BOX86_DYNAREC_WAIT
+unset BOX64_DYNAREC_WAIT">$PREFIX/glibc/opt/conf/dynarec/wait.conf
+	echo "unset BOX86_DYNAREC_X87DOUBLE
+unset BOX64_DYNAREC_X87DOUBLE">$PREFIX/glibc/opt/conf/dynarec/x87double.conf
+	echo "export BOX86_DYNAREC_CALLRET=1
+export BOX64_DYNAREC_CALLRET=1">$PREFIX/glibc/opt/conf/dynarec/callret.conf
+;;
+10)
+	echo "export DYNAREC_SETTINGS_SCRIPT=2
+export DYNAREC_CURRENT_PRESET=none">$PREFIX/glibc/opt/conf/dynarec_preset.conf
+	break
+;;
+255)
+	break
+;;
+esac
+done

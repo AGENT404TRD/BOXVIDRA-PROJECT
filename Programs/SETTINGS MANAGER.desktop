@@ -1,0 +1,12 @@
+[Desktop Entry]
+
+Name=Settings Manager
+
+Type=Application
+Icon=preferences-system
+Version=1.0
+Exec=xfce4-settings-manager
+Terminal=false
+Categories=System;
+StartupNotify=true
+Comment=Open Xfce Settings Manager

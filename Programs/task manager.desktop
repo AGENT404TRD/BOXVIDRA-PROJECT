@@ -1,0 +1,13 @@
+[Desktop Entry]
+
+Name=Task Manager
+
+Type=Application
+Icon=gnome-usage
+Version=1.0
+Exec=/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra_wine taskmgr
+Terminal=false
+Categories=System;
+StartupNotify=true
+Comment=
+Path=

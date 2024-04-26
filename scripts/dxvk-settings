@@ -1,0 +1,133 @@
+#!/bin/bash
+
+defitem=1
+
+while true; do
+load_configs
+dialog_menu_item $defitem "\Z6DXVK settings" "\ZbCurrent settings:
+	\Z6$(sed '3q;d' $DXVK_CONFIG_FILE)
+	$(sed '4q;d' $DXVK_CONFIG_FILE)
+	$(sed '6q;d' $DXVK_CONFIG_FILE)\Zn" \
+	"1" "\Z6d3d11.maxFeatureLevel \Z5(12_1 recommended)" \
+	"2" "\Z6dxgi.maxFrameRate \Z5(0 recommended)" \
+	"3" "\Z6dxgi.syncInterval \Z5(vsync)" \
+	"4" "\Z6Reset to default"
+defitem=$?
+case $defitem in
+1)
+	dialog_menu "" "" \
+"1" "\Z6d3d11.maxFeatureLevel =\Z5 9_1" \
+"2" "\Z6d3d11.maxFeatureLevel =\Z5 9_2" \
+"3" "\Z6d3d11.maxFeatureLevel =\Z5 9_3" \
+"4" "\Z6d3d11.maxFeatureLevel =\Z5 10_0" \
+"5" "\Z6d3d11.maxFeatureLevel =\Z5 10_1" \
+"6" "\Z6d3d11.maxFeatureLevel =\Z5 11_0" \
+"7" "\Z6d3d11.maxFeatureLevel =\Z5 11_1" \
+"8" "\Z6d3d11.maxFeatureLevel =\Z5 12_0" \
+"9" "\Z6d3d11.maxFeatureLevel =\Z5 12_1"
+	case $? in
+	1) sed -i '3s/.*/d3d11.maxFeatureLevel = 9_1/' $DXVK_CONFIG_FILE ;;
+	2) sed -i '3s/.*/d3d11.maxFeatureLevel = 9_2/' $DXVK_CONFIG_FILE ;;
+	3) sed -i '3s/.*/d3d11.maxFeatureLevel = 9_3/' $DXVK_CONFIG_FILE ;;
+	4) sed -i '3s/.*/d3d11.maxFeatureLevel = 10_0/' $DXVK_CONFIG_FILE ;;
+	5) sed -i '3s/.*/d3d11.maxFeatureLevel = 10_1/' $DXVK_CONFIG_FILE ;;
+	6) sed -i '3s/.*/d3d11.maxFeatureLevel = 11_0/' $DXVK_CONFIG_FILE ;;
+	7) sed -i '3s/.*/d3d11.maxFeatureLevel = 11_1/' $DXVK_CONFIG_FILE ;;
+	8) sed -i '3s/.*/d3d11.maxFeatureLevel = 12_0/' $DXVK_CONFIG_FILE ;;
+	9) sed -i '3s/.*/d3d11.maxFeatureLevel = 12_1/' $DXVK_CONFIG_FILE ;;
+	esac
+;;
+2)
+	dialog_menu "" "" \
+"1" "\Z6dxgi.maxFrameRate =\Z5 0 (unlimited-recommended)" \
+"2" "\Z6dxgi.maxFrameRate =\Z5 15" \
+"3" "\Z6dxgi.maxFrameRate =\Z5 25" \
+"4" "\Z6dxgi.maxFrameRate =\Z5 30" \
+"5" "\Z6dxgi.maxFrameRate =\Z5 40" \
+"6" "\Z6dxgi.maxFrameRate =\Z5 50" \
+"7" "\Z6dxgi.maxFrameRate =\Z5 60" \
+"8" "\Z6dxgi.maxFrameRate =\Z5 90" \
+"9" "\Z6dxgi.maxFrameRate =\Z5 120" \
+"10" "\Z6dxgi.maxFrameRate =\Z5 144"
+	case $? in
+	1)
+		sed -i '4s/.*/dxgi.maxFrameRate = 0/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 0/' $DXVK_CONFIG_FILE
+	;;
+	2)
+		sed -i '4s/.*/dxgi.maxFrameRate = 15/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 15/' $DXVK_CONFIG_FILE
+	;;
+	3)
+		sed -i '4s/.*/dxgi.maxFrameRate = 24/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 24/' $DXVK_CONFIG_FILE
+	;;
+	4)
+		sed -i '4s/.*/dxgi.maxFrameRate = 30/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 30/' $DXVK_CONFIG_FILE
+	;;
+	5)
+		sed -i '4s/.*/dxgi.maxFrameRate = 40/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 40/' $DXVK_CONFIG_FILE
+	;;
+	6)
+		sed -i '4s/.*/dxgi.maxFrameRate = 50/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 50/' $DXVK_CONFIG_FILE
+	;;
+	7)
+		sed -i '4s/.*/dxgi.maxFrameRate = 60/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 60/' $DXVK_CONFIG_FILE
+	;;
+	8)
+		sed -i '4s/.*/dxgi.maxFrameRate = 90/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 90/' $DXVK_CONFIG_FILE
+	;;
+	9)
+		sed -i '4s/.*/dxgi.maxFrameRate = 120/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 120/' $DXVK_CONFIG_FILE
+	;;
+	10)
+		sed -i '4s/.*/dxgi.maxFrameRate = 144/' $DXVK_CONFIG_FILE
+		sed -i '5s/.*/d3d9.maxFrameRate = 144/' $DXVK_CONFIG_FILE
+	;;
+	esac
+;;
+3)
+	dialog_menu "" "" \
+"1" "\Z6dxgi.syncInterval =\Z5 -1 (no effect)" \
+"2" "\Z6dxgi.syncInterval =\Z5 0 (no vsync)" \
+"3" "\Z6dxgi.syncInterval =\Z5 1 (vsync)" \
+"4" "\Z6dxgi.syncInterval =\Z5 2 (50% vsync)"
+	case $? in
+	1)
+		sed -i '6s/.*/dxgi.syncInterval = -1/' $DXVK_CONFIG_FILE
+		sed -i '7s/.*/d3d9.presentInterval = -1/' $DXVK_CONFIG_FILE
+	;;
+	2)
+		sed -i '6s/.*/dxgi.syncInterval = 0/' $DXVK_CONFIG_FILE
+		sed -i '7s/.*/d3d9.presentInterval = 0/' $DXVK_CONFIG_FILE
+	;;
+	3)
+		sed -i '6s/.*/dxgi.syncInterval = 1/' $DXVK_CONFIG_FILE
+		sed -i '7s/.*/d3d9.presentInterval = 1/' $DXVK_CONFIG_FILE
+	;;
+	4)
+		sed -i '6s/.*/dxgi.syncInterval = 2/' $DXVK_CONFIG_FILE
+		sed -i '7s/.*/d3d9.presentInterval = 2/' $DXVK_CONFIG_FILE
+	;;
+	esac
+;;
+4)
+	i=$(dialog_editbox $PREFIX/glibc/opt/dxvk.conf)
+	ret=$?
+	if [ $ret = 1 ] || [ $ret = 255 ]; then continue; fi
+	echo "$i">$PREFIX/glibc/opt/dxvk.conf
+;;
+5)
+	cp $PREFIX/glibc/opt/default-conf/dxvk.conf $PREFIX/glibc/opt
+;;
+255)
+	break
+;;
+esac
+done

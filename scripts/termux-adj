@@ -1,0 +1,9 @@
+while true; do
+    pid_list="$(pidof com.termux com.termux.x11 com.catfixture.inputbridge com.android.systemui:screenshot wine wine64 wineserver app_process bash /data/data/com.termux/files/usr/bin/bash) $$"
+    for j in 1 2 3 4 5 6 7 8 9 10; do
+        for i in $pid_list; do
+            echo "-17" 2>/dev/null >/proc/$i/oom_adj
+            sleep 0.05
+        done
+    done
+done

@@ -1,0 +1,31 @@
+before=$(free -m | grep Mem | grep -o -E '[0-9]+')
+am kill-all
+packages=$(pm list packages)
+for p in $packages; do
+package=${p:8}
+packid=$(pidof $package)
+if [ ! "$packid" = "" ] && \
+[ ! "$package" = "com.android.phone" ] && \
+[ ! "$package" = "com.termux" ] && \
+[ ! "$package" = "com.android.systemui" ] && \
+[ ! "$package" = "com.android.providers.media.module" ] && \
+[ ! "$package" = "com.android.networkstack.process" ] && \
+[ ! "$package" = "com.catfixture.inputbridge" ] && \
+[ ! "$package" = "com.termux.x11" ]; then
+echo "terminate $package ($packid)"
+kill -TERM $packid
+fi
+done
+echo ""
+echo "drop page cache"
+sync && echo 3 > /proc/sys/vm/drop_caches
+sleep 1.5
+after=$(free -m | grep Mem | grep -o -E '[0-9]+')
+echo -n "Used ram: "
+echo -n "$before" | sed '2q;d' | tr -d "\n"
+echo -n " -> "
+echo "$after" | sed '2q;d'
+echo -n "Page cache: "
+echo -n "$before" | sed '5q;d' | tr -d "\n"
+echo -n " -> "
+echo "$after" | sed '5q;d'

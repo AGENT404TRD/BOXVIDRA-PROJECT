@@ -1,0 +1,38 @@
+#!/bin/bash
+
+defitem=1
+
+while true; do
+if [ ! -e $PREFIX/glibc/opt/virgl/virgl-enabled ]; then
+	virgl_state="not "
+fi
+load_configs
+dialog_menu_item $defitem "\Z6VirGL settings" "\ZbCurrent settings:\Zn
+	\Z5MESA_GL_VERSION_OVERRIDE\Z5 =\Z6$MESA_GL_VERSION_OVERRIDE
+	\Z5MESA_GLSL_VERSION_OVERRIDE\Z5 =\Z6$MESA_GLSL_VERSION_OVERRIDE
+	\Z5MESA_EXTENSION_OVERRIDE\Z5 =\Z6$MESA_EXTENSION_OVERRIDE
+
+	\Z7VirGL is ${virgl_state}installed\Zn" \
+"1" "\Z6GL 2.1" \
+"2" "\Z6GL 2.1, \Z5dxTn (default)" \
+"3" "\Z6GL 3.3" \
+"4" "\Z6GL 3.3, \Z5dxTN"
+defitem=$?
+case $defitem in
+1)
+cp $PREFIX/glibc/opt/virgl/virgl21nodxtn.conf $PREFIX/glibc/opt/conf/virgl.conf
+;;
+2)
+cp $PREFIX/glibc/opt/virgl/virgl21.conf $PREFIX/glibc/opt/conf/virgl.conf
+;;
+3)
+cp $PREFIX/glibc/opt/virgl/virgl33nodxtn.conf $PREFIX/glibc/opt/conf/virgl.conf
+;;
+4)
+cp $PREFIX/glibc/opt/virgl/virgl33.conf $PREFIX/glibc/opt/conf/virgl.conf
+;;
+255)
+break
+;;
+esac
+done

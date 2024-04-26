@@ -1,0 +1,27 @@
+#!/bin/bash
+
+defitem=1
+
+while true; do
+load_configs
+dialog_menu_item $defitem "Root settings" "" \
+	"1" "Close background apps" \
+	"2" "OOM Adjuster (Prevent termux kill)"
+defitem=$?
+case $defitem in
+1)
+	chmod 777 $PREFIX/glibc/opt/scripts/close-apps
+	sudo bash $PREFIX/glibc/opt/scripts/close-apps
+	sleep 3
+;;
+2)
+	chmod 777 $PREFIX/glibc/opt/scripts/termux-adj
+	sudo bash $PREFIX/glibc/opt/scripts/termux-adj &
+	echo "OOM adjuster is now running. Please, don't use this option more than once! To stop it - force stop Termux"
+	sleep 4
+;;
+255)
+	break
+;;
+esac
+done

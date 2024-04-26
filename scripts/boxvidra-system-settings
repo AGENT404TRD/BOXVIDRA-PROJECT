@@ -1,0 +1,111 @@
+#!/bin/bash
+
+defitem=1
+
+while true; do
+load_configs
+dialog_menu_item $defitem "\Z6System settings" "\ZbCurrent settings:\Zn
+	\Z5PRIMARY_CORES\Z5;= \Z6$PRIMARY_CORES
+	\Z5SECONDARY_CORES\Z5 = \Z6$SECONDARY_CORES
+	\Z5DXVK_HUD\Z5 = \Z6$DXVK_HUD
+	\Z5HUD_PRESET\Z5 = \Z6$GALLIUM_HUD
+	\Z5TU_DEBUG\Z5 = \Z6$TU_DEBUG
+	\Z5MESA_VK_WSI_PRESENT_MODE\Z5 = \Z6$MESA_VK_WSI_PRESENT_MODE
+	\Z5FALLBACK RESOLUTION\Z5 = \Z6$(cat $PREFIX/glibc/opt/last-resolution.conf)\Zn" \
+	"1" "\Z6Change fallback resolution" \
+	"2" "\Z6Change primary cores amount" \
+	"3" "\Z6Change HUD preset" \
+	"4" "\Z6Select a7xx flicker fix \Z5(TU_DEBUG)" \
+	"5" "\Z6Change WSI_PRESENT_MODE"
+defitem=$?
+case $defitem in
+1)
+	i=$(dialog_inputbox "\Z6Set The New fallback resolution \Z5(e.x 800x600)")
+	if [ $? = 1 ] || [ "$i" = "" ]; then continue; fi
+	echo "$i">$PREFIX/glibc/opt/last-resolution.conf
+;;
+2)
+	dialog_menu "" "Select number of cores that you want to use." \
+	"2" "\Z6primary cores" \
+	"3" "\Z6primary cores" \
+	"4" "\Z6primary cores" \
+	"5" "\Z6primary cores" \
+	"6" "\Z6primary cores" \
+	"7" "\Z6primary cores"
+	case $? in
+	2) echo "export PRIMARY_CORES=6-7
+export SECONDARY_CORES=0-5">$PREFIX/glibc/opt/conf/cores.conf ;;
+	3) echo "export PRIMARY_CORES=5-7
+export SECONDARY_CORES=0-4">$PREFIX/glibc/opt/conf/cores.conf ;;
+	4) echo "export PRIMARY_CORES=4-7
+export SECONDARY_CORES=0-3">$PREFIX/glibc/opt/conf/cores.conf ;;
+	5) echo "export PRIMARY_CORES=3-7
+export SECONDARY_CORES=0-2">$PREFIX/glibc/opt/conf/cores.conf ;;
+	6) echo "export PRIMARY_CORES=2-7
+export SECONDARY_CORES=0-1">$PREFIX/glibc/opt/conf/cores.conf ;;
+	7) echo "export PRIMARY_CORES=1-7
+export SECONDARY_CORES=0-1">$PREFIX/glibc/opt/conf/cores.conf ;;
+	esac
+;;
+3)
+	dialog_menu "" "" \
+"1" "\Z6Disable gallium and DXVK hud" \
+"2" "\Z6Enable gallium fps counter" \
+"3" "\Z6Enable detailed DXVK hud, gallium fps counter"
+	case $? in
+	1)
+		echo "unset GALLIUM_HUD
+export GALLIUM_HUD_PERIOD=1
+unset DXVK_HUD">$PREFIX/glibc/opt/conf/hud.conf
+	;;
+	2)
+		echo "export GALLIUM_HUD=simple,fps
+export GALLIUM_HUD_PERIOD=1
+export DXVK_HUD=version,fps,scale=0.7">$PREFIX/glibc/opt/conf/hud.conf
+	;;
+	3)
+		echo "export GALLIUM_HUD=simple,fps
+export GALLIUM_HUD_PERIOD=1
+export DXVK_HUD=version,fps,api,scale=0.7,devinfo,gpuload,frametimes">$PREFIX/glibc/opt/conf/hud.conf
+	;;
+	esac
+;;
+4)
+	dialog_menu "" "" \
+"1" "\Z6TU_DEBUG=noconform" \
+"2" "\Z6TU_DEBUG=noconform,syncdraw \Z5(a7xx)" \
+"3" "\Z6TU_DEBUG=noconform,syncdraw,flushall \Z5(a7xx)"
+	case $? in
+	1)
+		echo "export TU_DEBUG=noconform">$PREFIX/glibc/opt/conf/tu_debug.conf
+	;;
+	2)
+		echo "export TU_DEBUG=noconform,syncdraw">$PREFIX/glibc/opt/conf/tu_debug.conf
+	;;
+	3)
+		echo "export TU_DEBUG=noconform,syncdraw,flushall">$PREFIX/glibc/opt/conf/tu_debug.conf
+	;;
+	esac
+;;
+5)
+	dialog_menu "" "" \
+"1" "\Z6WSI_PRESENT_MODE=mailbox" \
+"2" "\Z6WSI_PRESENT_MODE=relaxed \Z5(a7xx)"
+	case $? in
+	1)
+		echo "export MESA_VK_WSI_PRESENT_MODE=mailbox">$PREFIX/glibc/opt/conf/wsi_present.conf
+	;;
+	2)
+		echo "export MESA_VK_WSI_PRESENT_MODE=relaxed">$PREFIX/glibc/opt/conf/wsi_present.conf
+	;;
+	esac
+;;
+7)
+	cp $PREFIX/glibc/opt/default-conf/conf/{cores.conf,hud.conf,tu_debug.conf,wsi_present.conf} $PREFIX/glibc/opt/conf
+	cp $PREFIX/glibc/opt/default-conf/{last-resolution.conf,locale.conf} $PREFIX/glibc/opt
+;;
+255)
+	break
+;;
+esac
+done

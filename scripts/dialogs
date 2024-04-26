@@ -1,0 +1,49 @@
+#!/bin/bash
+
+export DIALOGRC=$PREFIX/glibc/opt/scripts/dialog.rc
+dialog_flags="--colors --output-fd 1 --erase-on-exit --no-shadow --cursor-off-label --no-kill"
+
+function dialog_menu {
+	tput civis
+	result=$(dialog $dialog_flags --title "$1" --menu "$2
+
+Select an option and click OK" 100 100 100 "${@:3}")
+	if [ "$result" = "" ]; then result=255; fi
+	tput cnorm
+	return $result
+}
+
+function dialog_menu_item {
+	tput civis
+	result=$(dialog --default-item "$1" $dialog_flags --title "$2" --menu "$3
+
+Select an option and click OK" 100 100 100 "${@:4}")
+	if [ "$result" = "" ]; then result=255; fi
+	tput cnorm
+	return $result
+}
+
+function dialog_yesno {
+	tput civis
+	while true; do
+		dialog --erase-on-exit --no-shadow --cursor-off-label --no-kill --no-cancel --yesno "$1" 0 0
+		result=$?
+		if ! [ "$result" = "255" ]; then
+			tput cnorm
+			return $result
+		fi
+	done
+	return 1
+}
+
+function dialog_inputbox {
+	dialog $dialog_flags --inputbox "$1" 0 0
+}
+
+function dialog_editbox {
+	dialog $dialog_flags --title "${1##*/}" --editbox "$1" 100 100
+}
+
+function dialog_msgbox {
+	dialog $dialog_flags --title "$1" --msgbox "$2" 0 0
+}

@@ -1,0 +1,70 @@
+#!/bin/bash
+
+defitem_settings=1
+
+while true; do
+dialog_menu_item $defitem_settings "\Z6Settings" "" \
+"1" "\Z6Dynarec settings" \
+"2" "\Z6Wine prefix settings \Z5(ESYNC)" \
+"3" "\Z6DXVK settings" \
+"4" "\Z6System settings" \
+"5" "\Z6Debug settings" \
+"6" "\Z6VirGL settings" \
+"7" "\Z6Uninstall and Reinstall" \
+"8" "\Z6Compatibility settings"
+defitem_settings=$?
+case $defitem_settings in
+1)
+	. $PREFIX/glibc/opt/conf/dynarec_preset.conf
+	if [ "$DYNAREC_SETTINGS_SCRIPT" = "1" ]; then
+		. $PREFIX/glibc/opt/scripts/dynarec-settings
+	else
+		. $PREFIX/glibc/opt/scripts/dynarec2-settings
+	fi
+;;
+2)
+	. $PREFIX/glibc/opt/scripts/prefix-settings
+;;
+3)
+	. $PREFIX/glibc/opt/scripts/dxvk-settings
+;;
+4)
+	. $PREFIX/glibc/opt/scripts/boxvidra-system-settings
+;;
+5)
+	defitem=1
+	while true; do
+	load_configs
+	dialog_menu_item $defitem "\ZbDebug settings" "\ZbCurrent settings:\Zn
+	\Z6MESA_NO_ERROR\Z6 =\Z5 $MESA_NO_ERROR
+	\Z6WINEDEBUG\Z6 =\Z5 $WINEDEBUG
+	\Z6BOX64_LOG\Z6 =\Z5 $BOX64_LOG
+	\Z6BOX64_SHOWSEGV\Z6 =\Z5 $BOX64_SHOWSEGV
+	\Z6BOX64_DLSYM_ERROR\Z6 =\Z5 $BOX64_DLSYM_ERROR
+	\Z6BOX64_DYNAREC_MISSING\Z6 =\Z5 $BOX64_DYNAREC_MISSING\Zn" \
+"1" "\Z6Disable debug" \
+"2" "\Z6Enable debug \Z5(/sdcard/boxvidra_log.txt)" \
+"3" "\Z6Enable detailed debug \Z5(/sdcard/boxvidra_log.txt)"
+	defitem=$?
+	case $defitem in
+	1) echo "export DEBUG_MODE=0">$PREFIX/glibc/opt/conf/debug.conf ;;
+	2) echo "export DEBUG_MODE=1">$PREFIX/glibc/opt/conf/debug.conf ;;
+	3) echo "export DEBUG_MODE=2">$PREFIX/glibc/opt/conf/debug.conf ;;
+	255) break ;;
+	esac
+	done
+;;
+6)
+	. $PREFIX/glibc/opt/scripts/virgl-settings
+;;
+7)
+	. $PREFIX/glibc/opt/scripts/restore-menu
+;;
+8)
+	. $PREFIX/glibc/opt/scripts/compatibility-settings
+;;
+255)
+	break
+;;
+esac
+done

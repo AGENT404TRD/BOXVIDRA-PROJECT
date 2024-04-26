@@ -1,0 +1,54 @@
+#!/bin/bash
+
+defitem=1
+
+while true; do
+load_configs
+dri3_state="dri3 is enabled"
+if [ "$MESA_VK_WSI_DEBUG" = "sw" ]; then
+	dri3_state="dri3 is disabled"
+fi
+dialog_menu_item $defitem "\Z6Compatibility settings" "\ZbCurrent settings:\Zn
+	\Z6$dri3_state
+	\Z6Startup compatibility mode\Z6 =\Z5 $STARTUP_COMPATIBILITY_MODE
+	\Z6services.exe startup\Z5 =\Z5 $STARTUP_WINEDEVICE_MODE" \
+	"1" "\Z6Switch dri3 \Z5(disable if Snapdragon 845)" \
+	"2" "\Z6Switch startup compatibility mode" \
+	"3" "\Z6Switch services.exe startup"
+defitem=$?
+case $defitem in
+1)
+	case "$MESA_VK_WSI_DEBUG" in
+	"sw")
+		echo "unset MESA_VK_WSI_DEBUG">$PREFIX/glibc/opt/conf/wsi_debug.conf
+	;;
+	"")
+		echo "export MESA_VK_WSI_DEBUG=sw">$PREFIX/glibc/opt/conf/wsi_debug.conf
+	;;
+	esac
+;;
+2)
+	case "$STARTUP_COMPATIBILITY_MODE" in
+	0)
+		echo "export STARTUP_COMPATIBILITY_MODE=1">$PREFIX/glibc/opt/conf/force_compatibility.conf
+	;;
+	1)
+		echo "export STARTUP_COMPATIBILITY_MODE=0">$PREFIX/glibc/opt/conf/force_compatibility.conf
+	;;
+	esac
+;;
+3)
+	case "$STARTUP_WINEDEVICE_MODE" in
+	0)
+		echo "export STARTUP_WINEDEVICE_MODE=1">$PREFIX/glibc/opt/conf/winedevice_startup.conf
+	;;
+	1)
+		echo "export STARTUP_WINEDEVICE_MODE=0">$PREFIX/glibc/opt/conf/winedevice_startup.conf
+	;;
+	esac
+;;
+255)
+	break
+;;
+esac
+done

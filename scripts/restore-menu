@@ -1,0 +1,35 @@
+#!/bin/bash
+
+defitem=1
+
+while true; do
+dialog_menu_item $defitem "\Z6Uninstall and Reinstall" "" \
+"1" "\Z6Reinstall Boxvidra" \
+"2" "\Z6Uninstall Boxvidra"
+defitem=$?
+case $defitem in
+1)
+	dialog_yesno "Are you sure?"
+	if [ "$?" = "0" ]; then
+		rm -rf $PREFIX/glibc/opt/conf
+		cp -r $PREFIX/glibc/opt/default-conf/* $PREFIX/glibc/opt
+		curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/main/install && . ~/x
+	fi
+;;
+2)
+	dialog_yesno "Do you want to continue and Uninstall Boxvidra?"
+	if [ "$?" = "0" ]; then
+		restore-termux-style
+		tput cnorm
+		rm -rf $PREFIX/glibc
+		rm -rf $PREFIX/bin/boxvidra
+		pkg uninstall xfce4
+		exit
+	fi
+;;
+255)
+	break
+;;
+esac
+
+done
