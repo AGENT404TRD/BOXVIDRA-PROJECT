@@ -1,5 +1,6 @@
 #!/bin/bash
 
+pkg install wget
 clear
 sleep 2
 echo -n "Setting up storage permissions.."
