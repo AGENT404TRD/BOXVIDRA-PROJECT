@@ -20,6 +20,7 @@ clear
 sleep 2
 
 echo -n "Installing Termux-am.."
+echo -e "\n"
 pkg install termux-am -y &>/dev/null
 echo -n "Termux-am Installed Successfuly "
 echo -e "\n"
@@ -132,14 +133,21 @@ cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra /data/data/com.ter
 sleep 2
 chmod +x * "/data/data/com.termux/files/usr/bin"
 chmod +x * "/data/data/com.termux/files/usr/bin/boxvidra"
-mkdir ~/Desktop/ &>/dev/null
-sleep 1
+
+if [ ! -d "~/Desktop" ]; then
+    mkdir -p ~/Desktop
+fi
+
 mv Programs/* ~/Desktop/
 
 cd ..
 
 # Delete The BETA File
 rm -rf BOXVIDRA-EMULATOR-BETA-
+
+cd Desktop
+chmod +x *
+cd ..
 
 echo -n "Boxvidra Scripts Installed Successfuly"
 echo -e "\n"
