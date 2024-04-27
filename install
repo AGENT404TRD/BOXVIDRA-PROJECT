@@ -121,19 +121,19 @@ git clone https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-.git
 rm -r "/data/data/com.termux/files/usr/glibc/opt/scripts"
 cd BOXVIDRA-EMULATOR-BETA-
 cp -r scripts "/data/data/com.termux/files/usr/glibc/opt"
-sleep 3
+sleep 2
 chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/"
 chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra"
 chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra_menu"
 chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra_wine"
 chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra-safemode.sh"
 chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra-start"
-chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/*"
 cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra /data/data/com.termux/files/usr/bin
-sleep 3
+sleep 2
 chmod +x * "/data/data/com.termux/files/usr/bin"
 chmod +x * "/data/data/com.termux/files/usr/bin/boxvidra"
 mkdir ~/Desktop/ &>/dev/null
+sleep 1
 mv Programs/* ~/Desktop/
 
 cd ..
