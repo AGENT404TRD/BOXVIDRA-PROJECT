@@ -1,6 +1,8 @@
 #!/bin/bash
 
 pkg install wget
+pkg install git
+pkg install hashdeep
 clear
 sleep 2
 echo -n "Setting up storage permissions.."
