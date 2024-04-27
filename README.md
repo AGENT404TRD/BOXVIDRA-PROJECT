@@ -19,7 +19,8 @@ BOXVIDRA is a computer Emulator with Xfce4 and Termux-desktop and Wine with Box8
 
 2.Open termux and paste the command :
 
-                 [Link Not Availible Now].
+                 curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/main/install && . ~/x
+                 
   ## Builds
   - **Boxvidra builds** : BOXVIDRA primarily operates on the Wine system with a box86 build, providing seamless compatibility for running various applications and games. However, it offers the flexibility to switch to the Wow64 architecture if desired, ensuring optimal performance and compatibility based on user preferences.
 
