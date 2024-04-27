@@ -118,12 +118,18 @@ echo -n "Installing Boxvidra Scripts..."
 # GITHUB
 git clone https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-.git
 
+rm -r "/data/data/com.termux/files/usr/glibc/opt/scripts"
 cd BOXVIDRA-EMULATOR-BETA-
-
 cp -r scripts "/data/data/com.termux/files/usr/glibc/opt"
 chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/"
+chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra"
+chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra_menu"
+chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra-safemode"
+chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra-start"
+chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/"
+cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra /data/data/com.termux/files/usr/bin
 chmod +x * "/data/data/com.termux/files/usr/bin"
-
+chmod +x * "/data/data/com.termux/files/usr/bin/boxvidra"
 mv Programs/* ~/Desktop/
 
 cd ..
