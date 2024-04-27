@@ -16,7 +16,7 @@ case $defitem in
 	fi
 ;;
 2)
-	if [[ ! "$WINE_PATH" = *"Wine GE-Custom 8.25"* ]] || [ ! -e "$WINE_PATH" ]; then
+	if [[ ! "$WINE_PATH" = *"wine-ge-custom-8-25"* ]] || [ ! -e "$WINE_PATH" ]; then
 		echo "WINEESYNC is disabled due to outdated wine selected now."
 		echo "Do you want to install and enable Wine GE-Custom 8.25 automatically? (Y/n)"
 		read i
