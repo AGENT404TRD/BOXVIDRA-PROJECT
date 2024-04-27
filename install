@@ -88,25 +88,6 @@ else
 sync-package wine-ge-custom-8-25
 fi
 
-if [ -d "/data/data/com.termux/files/usr/glibc/opt/scripts" ]; then
-    rm -rf "/data/data/com.termux/files/usr/glibc/opt/scripts"
-fi
-
-# GITHUB
-git clone https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-.git
-
-cd BOXVIDRA-EMULATOR-BETA-
-
-cp -r scripts "/data/data/com.termux/files/usr/glibc/opt"
-
-mv Programs/* ~/Desktop/
-
-cd ..
-
-# Delete The BETA File
-rm -rf BOXVIDRA-EMULATOR-BETA-
-ln -sf $PREFIX/glibc/opt/scripts/boxvidra $PREFIX/bin/boxvidra
-
 echo "Installing Boxvidra Emulator packages..."
 echo -e "\n"
 apt-get clean
@@ -128,19 +109,31 @@ pkg install p7zip -y &>/dev/null
 pkg install patchelf -y &>/dev/null
 pkg install ncurses-utils -y &>/dev/null
 pkg install hashdeep -y &>/dev/null
+
 echo -n "Boxvidra Emulator Packages Installed Successfuly"
 echo -e "\n"
+sleep 5
 
-echo "Installing Boxvidra Emulator Programs..."
-pkg update && pkg upgrade &>/dev/null
-pkg install chromium -y &>/dev/null
-pkg install firefox -y &>/dev/null
-pkg install vlc -y &>/dev/null
-pkg install vlc-qt &>/dev/null
-echo -n "Boxvidra Programs Installed Successfuly"
-sleep 3
-echo -n "Boxvidra Installed Successfuly"
+echo -n "Installing Boxvidra Scripts..."
+# GITHUB
+git clone https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-.git
+
+cd BOXVIDRA-EMULATOR-BETA-
+
+cp -r scripts "/data/data/com.termux/files/usr/glibc/opt"
+chmod +x * "/data/data/com.termux/files/usr/glibc/opt/scripts/"
+chmod +x * "/data/data/com.termux/files/usr/bin"
+
+mv Programs/* ~/Desktop/
+
+cd ..
+
+# Delete The BETA File
+rm -rf BOXVIDRA-EMULATOR-BETA-
+
+echo -n "Boxvidra Scripts Installed Successfuly"
 echo -e "\n"
-sleep 3
+
 echo -n "Boxvidra Emulator Installed Successfuly"
+echo -e "\n"
 echo "Type \"boxvidra\"" To Start
