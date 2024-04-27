@@ -19,4 +19,4 @@ else
 	. $PREFIX/glibc/opt/package-manager/package-manager
 fi
 
-. $PREFIX/glibc/opt/scripts/mobox_menu
+. $PREFIX/glibc/opt/scripts/boxvidra_menu
