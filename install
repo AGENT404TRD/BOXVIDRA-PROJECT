@@ -2,6 +2,7 @@
 
 termux-setup-storage
 pkg update
+termux-change-repo
 pkg upgrade
 pkg install wget
 pkg install git
