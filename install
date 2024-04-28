@@ -1,5 +1,9 @@
 #!/bin/bash
 
+termux-setup-storage
+pkg update
+termux-change-repo
+pkg upgrade
 pkg install wget
 pkg install git
 pkg install hashdeep
@@ -89,31 +93,48 @@ else
 sync-package wine-ge-custom-8-25
 fi
 
-echo "Installing Boxvidra Emulator packages..."
+echo "Installing Termux Packages..."
 echo -e "\n"
 apt-get clean
-apt-get update >/dev/null 2>&1
-apt-get -y --with-new-pkgs -o Dpkg::Options::="--force-confdef" upgrade >/dev/null 2>&1
-pkg install x11-repo -y &>/dev/null
-pkg install pulseaudio -y &>/dev/null
-pkg install wget -y &>/dev/null
-pkg install root-repo -y &>/dev/null
-pkg install termux-x11-nightly -y &>/dev/null
-pkg install x11-repo &>/dev/null
-pkg install termux-x11-nightly &>/dev/null
-pkg install pulseaudio &>/dev/null
-pkg install xfce4 &>/dev/null
-pkg install tur-repo &>/dev/null
-pkg install xwayland -y &>/dev/null
-pkg install xorg-xrandr -y &>/dev/null
-pkg install p7zip -y &>/dev/null
-pkg install patchelf -y &>/dev/null
-pkg install ncurses-utils -y &>/dev/null
-pkg install hashdeep -y &>/dev/null
+apt-get update
+apt-get -y --with-new-pkgs -o Dpkg::Options::="--force-confdef" upgrade
+clear
 
-echo -n "Boxvidra Emulator Packages Installed Successfuly"
+echo "Installing Boxvidra Emulator packages (1/3)"
+echo -e "\n"
+pkg install x11-repo -y
+pkg install pulseaudio -y
+pkg install wget -y
+echo "Boxvidra Emulator Packages Installed Successfuly (1/3)"
+clear
+sleep 2
+
+echo "Installing Boxvidra Emulator packages (2/3)"
+echo -e "\n"
+pkg install root-repo -
+pkg install termux-x11-nightly -y
+pkg install x11-repo
+pkg install termux-x11-nightly
+pkg install pulseaudio
+echo "Boxvidra Emulator Packages Installed Successfuly (2/3)"
+clear
+sleep 2
+
+echo "Installing Boxvidra Emulator packages (3/3)"
+echo -e "\n"
+pkg install xfce4
+pkg install tur-repo
+pkg install xwayland -y
+pkg install xorg-xrandr -y
+pkg install p7zip -y
+pkg install patchelf -y
+pkg install ncurses-utils -y
+pkg install hashdeep -y
+
+echo -n "Boxvidra Emulator Packages Installed Successfuly."
 echo -e "\n"
 sleep 5
+clear
 
 echo -n "Installing Boxvidra Scripts..."
 # GITHUB
@@ -145,8 +166,42 @@ cd Desktop
 chmod +x *
 cd ..
 
+# DOWNLOAD 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.11.BETA.Theme.tar.xz
+
+# EXTRACT
+tar -xf Windows.11.BETA.Theme.tar.xz
+
+# CD 0
+cd Windows 11
+
+# CP 2
+cp -r .themes ~/.themes || cp -r .themes /data/data/com.termux/files/home/.themes
+
+# CP 2
+cp -r icons/Windows-Eleven /data/data/com.termux/files/usr/share/icons/
+
+# CP 3
+cp -r .icons/Windows 11 Cursor /data/data/com.termux/files/home/.icons
+
+# CD 1
+cd ..
+cd entry
+
+# CP 4
+cp Change Theme.desktop /data/data/com.termux/files/home/Desktop
+
+# CD 2
+cd
+cd Desktop
+chmod +x *
+cd ..
+rm -r Windows 11
+rm Windows.11.BETA.Theme.tar.xz
+
 echo -n "Boxvidra Scripts Installed Successfuly"
 echo -e "\n"
+sleep 3
 
 echo -n "Boxvidra Emulator Installed Successfuly"
 echo -e "\n"
