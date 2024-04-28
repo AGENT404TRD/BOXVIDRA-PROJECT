@@ -175,13 +175,16 @@ tar -xf Windows.11.BETA.Theme.tar.xz
 # CD 0
 cd Windows 11
 
-# CP 2
+# CP 1
+mkdir -p /data/data/com.termux/files/home/.themes
 cp -r .themes ~/.themes || cp -r .themes /data/data/com.termux/files/home/.themes
 
 # CP 2
-cp -r icons/Windows-Eleven /data/data/com.termux/files/usr/share/icons/
+mkdir -p /data/data/com.termux/files/usr/share/icons
+cp -r icons/Windows-Eleven /data/data/com.termux/files/usr/share/icons
 
 # CP 3
+mkdir -p /data/data/com.termux/files/home/.icons
 cp -r .icons/Windows 11 Cursor /data/data/com.termux/files/home/.icons
 
 # CD 1
@@ -189,6 +192,7 @@ cd ..
 cd entry
 
 # CP 4
+mkdir -p /data/data/com.termux/files/home/Desktop
 cp Change Theme.desktop /data/data/com.termux/files/home/Desktop
 
 # CD 2
