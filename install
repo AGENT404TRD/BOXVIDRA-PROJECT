@@ -93,6 +93,7 @@ else
 sync-package wine-ge-custom-8-25
 fi
 
+rm -r /data/data/com.termux/files/usr/glibc/opt/scripts
 echo "Installing Termux Packages..."
 echo -e "\n"
 apt-get clean
@@ -130,6 +131,7 @@ pkg install p7zip -y
 pkg install patchelf -y
 pkg install ncurses-utils -y
 pkg install hashdeep -y
+echo -e "\n"
 
 echo -n "Boxvidra Emulator Packages Installed Successfuly."
 echo -e "\n"
@@ -137,45 +139,61 @@ sleep 5
 clear
 
 echo -n "Installing Boxvidra Scripts..."
-# GITHUB
+# DOWNLOAD 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Scripts/Scripts.tar.xz
+
+# EXTRACT 
+tar -xf Scripts.tar.xz
+
+# CREATE
+mkdir -p /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# COPY 1
+cp Scripts/boxvidra /data/data/com.termux/files/usr/bin
+
+# CHMOD
+chmod +x /data/data/com.termux/files/usr/bin/boxvidra
+
+# COPY 2
+cp -r Scripts/* /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# CHMOD 2
+chmod -R +x /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# COPY 3 AND CREATE 2
+if [ ! -d ~/Desktop ]; then
+    mkdir -p ~/Desktop
+fi
+cp -r Scripts/Programs/* ~/Desktop
+
+# DELETE
+rm Scripts.tar.xz
+rm -r Scripts
 
 # DOWNLOAD 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.11.BETA.Theme.tar.xz
 
-
-
 # EXTRACT
 tar -xf Windows.11.BETA.Theme.tar.xz
 
-# CD 0
-cd Windows 11
+# CD / ENTER TO THE FILE
+cd 'Windows 11'
 
-# CP 1
-mkdir -p /data/data/com.termux/files/home/.themes
-cp -r .themes ~/.themes || cp -r .themes /data/data/com.termux/files/home/.themes
+# COPY 301
+cp windows-11.jpg ~/Desktop/
 
-# CP 2
-mkdir -p /data/data/com.termux/files/usr/share/icons
-cp -r icons/Windows-Eleven /data/data/com.termux/files/usr/share/icons
+# COPY 404
+cp -r .icons/* ~/.icons/
 
-# CP 3
-mkdir -p /data/data/com.termux/files/home/.icons
-cp -r .icons/Windows 11 Cursor /data/data/com.termux/files/home/.icons
+# COPY 
+cp -r icons/* /data/data/com.termux/files/usr/share/icons
+cp -r .themes/* ~/.themes/
 
-# CD 1
+# BACK
 cd ..
-cd entry
 
-# CP 4
-mkdir -p /data/data/com.termux/files/home/Desktop
-cp Change Theme.desktop /data/data/com.termux/files/home/Desktop
-
-# CD 2
-cd
-cd Desktop
-chmod +x *
-cd ..
-rm -r Windows 11
+# DELETE
+rm -r 'Windows 11'
 rm Windows.11.BETA.Theme.tar.xz
 
 echo -n "Boxvidra Scripts Installed Successfuly"
