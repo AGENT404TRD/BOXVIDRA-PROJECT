@@ -1,0 +1,30 @@
+#!/bin/bash
+
+pkg install xfce4-panel-profiles
+clear
+
+# DOWNLOAD 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.tar.xz
+
+# EXTRACT
+tar -xf Windows.10.tar.xz
+
+# CD / ENTER TO THE FILE
+cd 'Windows 10'
+
+# COPY 301
+cp -r 'Wallpapers' ~/Desktop/
+
+# COPY 404
+cp -r .icons/* ~/.icons/
+
+# COPY 
+cp -r icons/* /data/data/com.termux/files/usr/share/icons
+cp -r .themes/* ~/.themes/
+
+# BACK
+cd ..
+
+# DELETE
+rm -r 'Windows 10'
+rm Windows.10.tar.xz
