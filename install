@@ -7,6 +7,7 @@ pkg upgrade
 pkg install wget
 pkg install git
 pkg install hashdeep
+pkg install xfce4-panel-profiles
 clear
 sleep 2
 echo -n "Setting up storage permissions.."
@@ -171,16 +172,13 @@ rm Scripts.tar.xz
 rm -r Scripts
 
 # DOWNLOAD 
-wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.11.BETA.Theme.tar.xz
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.tar.xz
 
 # EXTRACT
-tar -xf Windows.11.BETA.Theme.tar.xz
+tar -xf Windows.10.tar.xz
 
 # CD / ENTER TO THE FILE
-cd 'Windows 11'
-
-# COPY 301
-cp windows-11.jpg ~/Desktop/
+cd 'Windows 10'
 
 # COPY 404
 cp -r .icons/* ~/.icons/
@@ -193,8 +191,9 @@ cp -r .themes/* ~/.themes/
 cd ..
 
 # DELETE
-rm -r 'Windows 11'
-rm Windows.11.BETA.Theme.tar.xz
+rm -r 'Windows 10'
+rm Windows.10.tar.xz
+echo -e "\n"
 
 echo -n "Boxvidra Scripts Installed Successfuly"
 echo -e "\n"
