@@ -181,11 +181,11 @@ tar -xf Windows.10.tar.xz
 cd 'Windows 10'
 
 # COPY 404
-cp -r .icons/* ~/.icons/
+cp -r .icons /data/data/com.termux/files/home
 
 # COPY 
 cp -r icons/* /data/data/com.termux/files/usr/share/icons
-cp -r .themes/* ~/.themes/
+cp -r .themes /data/data/com.termux/files/home
 
 # BACK
 cd ..
