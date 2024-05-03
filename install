@@ -186,6 +186,7 @@ cp -r .icons /data/data/com.termux/files/home
 # COPY 
 cp -r icons/* /data/data/com.termux/files/usr/share/icons
 cp -r .themes /data/data/com.termux/files/home
+cp -r Wallpapers /data/data/com.termux/files/home/Desktop
 
 # BACK
 cd ..
@@ -198,6 +199,7 @@ echo -e "\n"
 echo -n "Boxvidra Scripts Installed Successfuly"
 echo -e "\n"
 sleep 3
+clear
 
 echo -n "Boxvidra Emulator Installed Successfuly"
 echo -e "\n"
