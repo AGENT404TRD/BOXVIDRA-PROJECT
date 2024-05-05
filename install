@@ -8,6 +8,7 @@ pkg install wget
 pkg install git
 pkg install hashdeep
 pkg install xfce4-panel-profiles
+pkg install glmark2
 clear
 sleep 2
 echo -n "Setting up storage permissions.."
