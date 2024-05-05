@@ -140,7 +140,16 @@ echo -e "\n"
 sleep 5
 clear
 
-echo -n "Installing Boxvidra Scripts..."
+echo "Select an option"
+echo "1) Install box86 scripts "
+echo "2) Install wow64 scripts "
+echo ""
+echo -n "Selected number: "
+read i
+case "$i" in
+1)
+clear
+echo -n "Installing Boxvidra (box86) Scripts..."
 # DOWNLOAD 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Scripts/Scripts.tar.xz
 
@@ -171,7 +180,40 @@ cp -r Scripts/Programs/* ~/Desktop
 # DELETE
 rm Scripts.tar.xz
 rm -r Scripts
+;;
+2)
+echo -n "Installing Boxvidra (wow64) Scripts..."
+# DOWNLOAD 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Scripts/Scripts64.tar.xz
 
+# EXTRACT 
+tar -xf Scripts64.tar.xz
+
+# CREATE
+mkdir -p /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# COPY 1
+cp Scripts/boxvidra /data/data/com.termux/files/usr/bin
+
+# CHMOD
+chmod +x /data/data/com.termux/files/usr/bin/boxvidra
+
+# COPY 2
+cp -r Scripts/* /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# CHMOD 2
+chmod -R +x /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# COPY 3 AND CREATE 2
+if [ ! -d ~/Desktop ]; then
+    mkdir -p ~/Desktop
+fi
+cp -r Scripts/Programs/* ~/Desktop
+
+# DELETE
+rm Scripts64.tar.xz
+rm -r Scripts
+;;
 # DOWNLOAD 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.tar.xz
 
