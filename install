@@ -137,7 +137,7 @@ echo -e "\n"
 
 echo -n "Boxvidra Emulator Packages Installed Successfuly."
 echo -e "\n"
-sleep 5
+sleep 3
 clear
 
 echo "Select an option"
@@ -214,6 +214,10 @@ cp -r Scripts/Programs/* ~/Desktop
 rm Scripts64.tar.xz
 rm -r Scripts
 ;;
+esac
+
+# WIN 10 THEME
+echo -n "Installing Windows 10 themes and wallpapers..."
 # DOWNLOAD 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.tar.xz
 
@@ -238,6 +242,15 @@ cd ..
 rm -r 'Windows 10'
 rm Windows.10.tar.xz
 echo -e "\n"
+
+echo -n "Boxvidra Scripts Installed Successfuly"
+echo -e "\n"
+sleep 3
+clear
+
+echo -n "Boxvidra Emulator Installed Successfuly"
+echo -e "\n"
+echo "Type \"boxvidra\"" To Start
 
 echo -n "Boxvidra Scripts Installed Successfuly"
 echo -e "\n"
