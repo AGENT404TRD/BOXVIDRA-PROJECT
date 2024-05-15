@@ -18,7 +18,8 @@ cp -r .icons /data/data/com.termux/files/home
 cp -r icons/* /data/data/com.termux/files/usr/share/icons
 cp -r .themes /data/data/com.termux/files/home
 cp -r .config /data/data/com.termux/files/home
-cp -r Wallpapers /data/data/com.termux/files/home
+cp -r WALLPAPERS /data/data/com.termux/files/home
+rm /data/data/com.termux/files/home/Desktop/'Change Theme.desktop'
 
 # BACK
 cd ..
@@ -28,21 +29,7 @@ rm -r 'Windows 11'
 rm Windows.11.tar.xz
 echo -e "\n"
 
-echo -n "Boxvidra Scripts Installed Successfuly"
+echo -n "Boxvidra Windows 11 Theme Installed Successfuly"
 echo -e "\n"
 sleep 3
 clear
-
-echo -n "Boxvidra Emulator Installed Successfuly"
-echo -e "\n"
-echo "Type \"boxvidra\"" To Start
-
-echo -n "Boxvidra Scripts Installed Successfuly"
-echo -e "\n"
-sleep 3
-clear
-
-echo -n "Boxvidra Emulator Installed Successfuly"
-echo -e "\n"
-echo "Type \"boxvidra\"" To Start
-BOXVIDRA-EMULATOR-BETA-/install at main · AGENT404TRD/BOXVIDRA-EMULATOR-BETA-
