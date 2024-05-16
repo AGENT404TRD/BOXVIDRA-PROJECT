@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt install xfce4-whiskermenu-plugin
+
 # WIN 10 THEME
 echo -n "Installing Windows 11 theme..."
 # DOWNLOAD 
