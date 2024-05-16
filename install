@@ -7,8 +7,6 @@ pkg upgrade
 pkg install wget
 pkg install git
 pkg install hashdeep
-pkg install xfce4-panel-profiles
-pkg install glmark2
 clear
 sleep 2
 echo -n "Setting up storage permissions.."
@@ -133,6 +131,7 @@ pkg install p7zip -y
 pkg install patchelf -y
 pkg install ncurses-utils -y
 pkg install hashdeep -y
+apt install xfce4-whiskermenu-plugin
 echo -e "\n"
 
 echo -n "Boxvidra Emulator Packages Installed Successfuly."
