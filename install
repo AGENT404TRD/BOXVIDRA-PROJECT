@@ -131,7 +131,11 @@ pkg install p7zip -y
 pkg install patchelf -y
 pkg install ncurses-utils -y
 pkg install hashdeep -y
+pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android
 apt install xfce4-whiskermenu-plugin
+apt install xfce4-screenshooter
+apt install android-tools
+apt install glmark
 echo -e "\n"
 
 echo -n "Boxvidra Emulator Packages Installed Successfuly."
@@ -140,8 +144,8 @@ sleep 3
 clear
 
 echo "Select an option"
-echo "1) Install box86 scripts "
-echo "2) Install wow64 scripts "
+echo "1) Install box86 scripts for box86-64 build "
+echo "2) Install wow64 scripts for wow64 build "
 echo ""
 echo -n "Selected number: "
 read i
@@ -174,7 +178,6 @@ chmod -R +x /data/data/com.termux/files/usr/glibc/opt/scripts
 if [ ! -d ~/Desktop ]; then
     mkdir -p ~/Desktop
 fi
-cp -r Scripts/Programs/* ~/Desktop
 
 # DELETE
 rm Scripts.tar.xz
@@ -207,7 +210,6 @@ chmod -R +x /data/data/com.termux/files/usr/glibc/opt/scripts
 if [ ! -d ~/Desktop ]; then
     mkdir -p ~/Desktop
 fi
-cp -r Scripts/Programs/* ~/Desktop
 
 # DELETE
 rm Scripts64.tar.xz
@@ -217,46 +219,26 @@ clear
 ;;
 esac
 
-# WIN 10 THEME
-echo -n "Installing Windows 11 theme..."
-# DOWNLOAD 
-wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.11.tar.xz
-
-# EXTRACT
-tar -xf Windows.11.tar.xz
-
-# CD / ENTER TO THE FILE
-cd 'Windows 11'
-
-# COPY 404
-cp -r .icons /data/data/com.termux/files/home
-
-# COPY 
-cp -r icons/* /data/data/com.termux/files/usr/share/icons
-cp -r .themes /data/data/com.termux/files/home
-cp -r .config /data/data/com.termux/files/home
+echo -n "Installing Windows 11 theme (Light) ..."
+   
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.11.Light.tar.xz
+tar -xf Windows.11.Light.tar.xz
+cd 'Windows 11 Light'
+cp -r .icons /data/data/com.termux/files/home/
+cp -r PROGRAMS/* /data/data/com.termux/files/home/Desktop
+cp -r .themes /data/data/com.termux/files/home/
+cp -r APPLICATIONS /data/data/com.termux/files/home
+cp .config.tar.xz /data/data/com.termux/files/home
+tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+cp Win11.tar.xz /data/data/com.termux/files/usr/share/icons
+tar -xf /data/data/com.termux/files/usr/share/icons/Win11.tar.xz -C /data/data/com.termux/files/usr/share/icons
 cp -r WALLPAPERS /data/data/com.termux/files/home
-rm /data/data/com.termux/files/home/Desktop/'Change Theme.desktop'
-
-# BACK
+rm /data/data/com.termux/files/home/.config.tar.xz
 cd ..
-
-# DELETE
-rm -r 'Windows 11'
-rm Windows.11.tar.xz
-echo -e "\n"
-
-echo -n "Boxvidra Windows 11 Theme Installed Successfuly"
-echo -e "\n"
-sleep 3
+rm -r 'Windows 11 Light'
+rm Windows.11.Light.tar.xz
 clear
-
-echo -n "Boxvidra Emulator Installed Successfuly"
-echo -e "\n"
-echo "Type \"boxvidra\"" To Start
-
-echo -n "Boxvidra Scripts Installed Successfuly"
-echo -e "\n"
+echo -n "Windows 11 theme (Light) Installed Successfully"
 sleep 3
 clear
 
