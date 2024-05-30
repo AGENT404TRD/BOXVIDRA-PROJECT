@@ -1,37 +1,4 @@
 #!/bin/bash
 
-apt install xfce4-whiskermenu-plugin
-
-# WIN 10 THEME
-echo -n "Installing Windows 11 theme..."
-# DOWNLOAD 
-wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.11.tar.xz
-
-# EXTRACT
-tar -xf Windows.11.tar.xz
-
-# CD / ENTER TO THE FILE
-cd 'Windows 11'
-
-# COPY 404
-cp -r .icons /data/data/com.termux/files/home
-
-# COPY 
-cp -r icons/* /data/data/com.termux/files/usr/share/icons
-cp -r .themes /data/data/com.termux/files/home
-cp -r .config /data/data/com.termux/files/home
-cp -r WALLPAPERS /data/data/com.termux/files/home
-rm /data/data/com.termux/files/home/Desktop/'Change Theme.desktop'
-
-# BACK
-cd ..
-
-# DELETE
-rm -r 'Windows 11'
-rm Windows.11.tar.xz
-echo -e "\n"
-
-echo -n "Boxvidra Windows 11 Theme Installed Successfuly"
-echo -e "\n"
-sleep 3
-clear
+cd /data/data/com.termux/files/usr/glibc/opt/scripts
+dos2unix *
