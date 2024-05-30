@@ -131,6 +131,9 @@ pkg install p7zip -y
 pkg install patchelf -y
 pkg install ncurses-utils -y
 pkg install hashdeep -y
+pkg install firefox
+pkg install vlc
+pkg install vlc-qt
 pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android
 apt install xfce4-whiskermenu-plugin
 apt install xfce4-screenshooter
