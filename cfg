@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# تحميل وفك ضغط الملف BOXVIDRA CFG.tar.xz
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Cfg/BOXVIDRA.CFG.tar.xz
+tar -xf BOXVIDRA_CFG.tar.xz -C ~/Desktop
+rm BOXVIDRA_CFG.tar.xz
+
+# تحميل وفك ضغط الملف libs.tar.xz
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Cfg/libs.tar.xz
+tar -xf libs.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
+rm libs.tar.xz
