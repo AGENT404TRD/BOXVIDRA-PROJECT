@@ -1,4 +1,16 @@
 #!/bin/bash
 
-cd /data/data/com.termux/files/usr/glibc/opt/scripts
-dos2unix *
+# CFG APPLICATION 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
+tar -xf BOXVIDRA.CFG.APP.tar.xz -C ~/Desktop
+rm BOXVIDRA.CFG.APP.tar.xz
+
+# BOXVIDRA LIBS
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/boxvidra-libs.tar.xz
+tar -xf boxvidra-libs.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
+rm boxvidra-libs.tar.xz
+
+# BOXVIDRA PREFIX
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/boxvidra-prefix.tar.xz
+tar -xf boxvidra-prefix.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
+rm boxvidra-prefix.tar.xz
