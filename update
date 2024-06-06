@@ -1,5 +1,6 @@
 #!/bin/bash
 
+pkg install python-tkinter
 # CFG APPLICATION 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
 tar -xf BOXVIDRA.CFG.APP.tar.xz -C ~/Desktop
