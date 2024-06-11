@@ -138,7 +138,7 @@ pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrendere
 apt install xfce4-whiskermenu-plugin
 apt install xfce4-screenshooter
 apt install android-tools
-apt install glmark
+pkg install python-tkinter
 echo -e "\n"
 
 echo -n "Boxvidra Emulator Packages Installed Successfuly."
@@ -244,6 +244,28 @@ clear
 echo -n "Windows 11 theme (Light) Installed Successfully"
 sleep 3
 clear
+
+# BOXVIDRA CFG APPLICATION
+
+echo -n "Installing Boxvidra configuration application ..."
+
+# CFG APPLICATION 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
+tar -xf BOXVIDRA.CFG.APP.tar.xz -C ~/Desktop
+rm BOXVIDRA.CFG.APP.tar.xz
+
+# BOXVIDRA LIBS
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/boxvidra-libs.tar.xz
+tar -xf boxvidra-libs.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
+rm boxvidra-libs.tar.xz
+
+# BOXVIDRA PREFIX
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/boxvidra-prefix.tar.xz
+tar -xf boxvidra-prefix.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
+rm boxvidra-prefix.tar.xz
+
+clear
+sleep 2
 
 echo -n "Boxvidra Emulator Installed Successfuly"
 echo -e "\n"
