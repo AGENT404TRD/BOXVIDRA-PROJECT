@@ -1,6 +1,7 @@
 #!/bin/bash
 
-pkg install python-tkinter
+pkg install python-tkinter -y
+
 # CFG APPLICATION 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
 tar -xf BOXVIDRA.CFG.APP.tar.xz -C ~/Desktop
@@ -15,3 +16,178 @@ rm boxvidra-libs.tar.xz
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/boxvidra-prefix.tar.xz
 tar -xf boxvidra-prefix.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
 rm boxvidra-prefix.tar.xz
+clear
+
+# BOXVIDRA SCRIPTS (WOW64) (BOX86)
+echo "Select an option :"
+echo "1) Update box86-64 scripts for box86-64 build "
+echo "2) Update wow64 scripts for wow64 build "
+echo ""
+echo -n "Selected number: "
+read i
+case "$i" in
+1)
+clear
+echo -n "Installing Boxvidra (box86) Scripts..."
+# DOWNLOAD 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Scripts/Scripts.tar.xz
+
+# EXTRACT 
+tar -xf Scripts.tar.xz
+
+# REMOVE 
+rm -r /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# CREATE
+mkdir -p /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# COPY 1
+cp Scripts/boxvidra /data/data/com.termux/files/usr/bin
+
+# CHMOD
+chmod +x /data/data/com.termux/files/usr/bin/boxvidra
+
+# COPY 2
+cp -r Scripts/* /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# CHMOD 2
+chmod -R +x /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# DELETE
+rm Scripts.tar.xz
+rm -r Scripts
+
+echo -n "Boxvidra (WOW64) Scripts Updated Successfully"
+clear
+;;
+2)
+echo -n "Updating Boxvidra (wow64) Scripts..."
+# DOWNLOAD 
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Scripts/Scripts64.tar.xz
+
+# REMOVE 
+rm -r /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# EXTRACT 
+tar -xf Scripts64.tar.xz
+
+# CREATE
+mkdir -p /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# COPY 1
+cp Scripts/boxvidra /data/data/com.termux/files/usr/bin
+
+# CHMOD
+chmod +x /data/data/com.termux/files/usr/bin/boxvidra
+
+# COPY 2
+cp -r Scripts/* /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# CHMOD 2
+chmod -R +x /data/data/com.termux/files/usr/glibc/opt/scripts
+
+# DELETE
+rm Scripts64.tar.xz
+rm -r Scripts
+echo -n "Boxvidra (WOW64) Scripts Updated Successfully"
+clear
+;;
+esac
+
+echo "Install the new Themes :"
+echo "1) Install Windows XP Theme"
+echo "2) Install Windows 95 Theme"
+echo "3) Install MacOS Theme"
+echo "4) Exit"
+echo ""
+echo -n "Selected number: "
+read i
+case "$i" in
+1)
+echo -n "Installing WindowsXP Theme ..."
+   
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/WindowsXP.tar.xz
+tar -xf WindowsXP.tar.xz
+cd 'WindowsXP'
+cp -r .icons /data/data/com.termux/files/home/
+cp -r PROGRAMS/* /data/data/com.termux/files/home/Desktop
+cp -r .themes /data/data/com.termux/files/home/
+cp -r APPLICATIONS /data/data/com.termux/files/home
+cp .config.tar.xz /data/data/com.termux/files/home
+tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+cp Windows-XP-3.1.tar.xz /data/data/com.termux/files/usr/share/icons
+tar -xf /data/data/com.termux/files/usr/share/icons/Windows-XP-3.1.tar.xz -C /data/data/com.termux/files/usr/share/icons
+cp -r WALLPAPERS /data/data/com.termux/files/home
+rm /data/data/com.termux/files/home/.config.tar.xz
+cd ..
+rm -r 'WindowsXP'
+rm WindowsXP.tar.xz
+clear
+echo -n "WindowsXP Theme Installed Successfully"
+echo -n "Boxvidra Emulator Updated Successfully . . ."
+sleep 3
+clear
+echo -n "Boxvidra Emulator Updated Successfully . . ."
+sleep 3
+;;
+2)
+echo -n "Installing Windows95 Theme ..."
+   
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows95.tar.xz
+tar -xf Windows95.tar.xz
+cd 'Windows95'
+cp -r .icons /data/data/com.termux/files/home/
+cp -r PROGRAMS/* /data/data/com.termux/files/home/Desktop
+cp -r .themes /data/data/com.termux/files/home/
+cp -r APPLICATIONS /data/data/com.termux/files/home
+cp .config.tar.xz /data/data/com.termux/files/home
+tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+cp Chicago95.tar.xz /data/data/com.termux/files/usr/share/icons
+tar -xf /data/data/com.termux/files/usr/share/icons/Chicago95.tar.xz -C /data/data/com.termux/files/usr/share/icons
+cp -r WALLPAPERS /data/data/com.termux/files/home
+rm /data/data/com.termux/files/home/.config.tar.xz
+cd ..
+rm -r 'Windows95'
+rm Windows95.tar.xz
+clear
+echo -n "Windows95 Theme Installed Successfully"
+sleep 3
+clear
+echo -n "Boxvidra Emulator Updated Successfully . . ."
+sleep 3
+;;
+3)
+echo -n "Installing MacOS Theme ..."
+   
+wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/MacOS.tar.xz
+tar -xf MacOS.tar.xz
+cd 'MacOS'
+cp -r .icons /data/data/com.termux/files/home/
+cp -r PROGRAMS/* /data/data/com.termux/files/home/Desktop
+cp -r .themes /data/data/com.termux/files/home/
+cp -r APPLICATIONS /data/data/com.termux/files/home
+cp .config.tar.xz /data/data/com.termux/files/home
+tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+cp WhiteSur.tar.xz /data/data/com.termux/files/usr/share/icons
+tar -xf /data/data/com.termux/files/usr/share/icons/WhiteSur.tar.xz -C /data/data/com.termux/files/usr/share/icons
+cp -r WALLPAPERS /data/data/com.termux/files/home
+rm /data/data/com.termux/files/home/.config.tar.xz
+cd ..
+cd .themes
+tar -xf WhiteSur-Light.tar.xz
+cd ..
+rm MacOS.tar.xz
+echo -n "MacOS Theme Installed Successfully"
+sleep 3
+clear
+echo -n "Boxvidra Emulator Updated Successfully . . ."
+sleep 3
+;;
+4)
+exit
+;;
+*)
+echo "Invalid selection, please choose a valid option."
+clear
+;;
+esac
