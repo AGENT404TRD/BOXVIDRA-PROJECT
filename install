@@ -123,22 +123,22 @@ sleep 2
 
 echo "Installing Boxvidra Emulator packages (3/3)"
 echo -e "\n"
-pkg install xfce4
-pkg install tur-repo
+pkg install xfce4 -y
+pkg install tur-repo -y
 pkg install xwayland -y
 pkg install xorg-xrandr -y
 pkg install p7zip -y
 pkg install patchelf -y
 pkg install ncurses-utils -y
 pkg install hashdeep -y
-pkg install firefox
-pkg install vlc
-pkg install vlc-qt
-pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android
-apt install xfce4-whiskermenu-plugin
-apt install xfce4-screenshooter
-apt install android-tools
-pkg install python-tkinter
+pkg install firefox -y
+pkg install vlc -y
+pkg install vlc-qt -y
+pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android -y
+apt install xfce4-whiskermenu-plugin -y
+apt install xfce4-screenshooter -y
+apt install android-tools -y
+pkg install python-tkinter -y
 echo -e "\n"
 
 echo -n "Boxvidra Emulator Packages Installed Successfuly."
