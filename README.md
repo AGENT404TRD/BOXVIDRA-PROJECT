@@ -1,57 +1,137 @@
-# BOXVIDRA EMULATOR BETA
-![LOGO](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/24c6fd3c-7cd5-4272-ac98-ff55dc235918)
+![Boxvidra Logo]()
 
-BOXVIDRA is a computer Emulator with Xfce4 and Termux-desktop and Wine with Box86 Build Or Wow64 Build Created by the owner Agent 404, co-owner Agent 301, secondary developer Agent 202, and script execution, download, and interface developer DeathGhost.
 
-## Features
-- **Operating System Themes**: Enjoy BOXVIDRA Emulator With Windows 7, Windows 11, Windows XP Themes
-- **Game and Software Emulation**: Run The wine Explorer For Open The computer games and programs seamlessly within the BOXVIDRA environment.
-- **Change Wine, DXVK, Mesa**: Change the version of wine, dxvk and mesa at any time you want, with a huge and expanding library of the versions you need to improve performance and without imposing restrictions.
-   
-    - ## Contributors
-  - **Owner**: Agent 404
-  - **Co-owner**: Agent 301
-  - **Secondary Developer**: Agent 202
-  - **Script Developer**: DeathGhost
-    
-  ## Installation
-1.Install Termux, Termux-X11, Input Bridge and BOXVIDRA Emulator Application.
+**BOXVIDRA EMULATOR** is a project created by [AGENT 404 (The owner and the main developer], [AGENT 301], [AGENT 202], [AGENT 17]
+This emulator works with xfce4, box64, and box86, and contains many features that make it a real PC emulator, such as themes, browsers, programs, running PC games, etc..
 
-2.Open termux and paste the command :
 
-                 curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/main/install && . ~/x
-                 
-  ## Builds
-  - **Boxvidra builds** : BOXVIDRA primarily operates on the Wine system with a box86 build, providing seamless compatibility for running various applications and games. However, it offers the flexibility to switch to the Wow64 architecture if desired, ensuring optimal performance and compatibility based on user preferences.
 
-    ## Themes And Icons
-    - **Boxvidra Themes And Icons** :
-    - Win 11 Theme
-    - ![BOXVIDRA WIN 11 THEME](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/efb84dc8-7102-4359-880c-517e1f3f0356)
-    - In general, the Win 7 and Win XP themes will be available in the full version. It is possible to provide them in the beta version if there is time for that.
+# Installation :
 
-## Boxvidra Requirements
+[Termux](https://f-droid.org/repo/com.termux_118.apk),[Termux-X11](https://github.com/ahmad1abbadi/extra/releases/download/apps/termux-x11.apk) and [Input Bridge v0.0.7](https://github.com/ahmad1abbadi/extra/releases/download/apps/input+bridge+0.0.7.apk)
 
-- **Requirements**: Boxvidra Emulator requires the following specifications :
-  - RAM: 4 GB
-  - Storage: 10 GB
-  - Processor: Snapdragon 665 or higher
-     
-      - BOXVIDRA is designed to run smoothly on low-end processors while delivering optimal performance.
-BOXVIDRA is meticulously crafted with optimization for low-end hardware in mind. Here's how:
 
-1. **Efficient Resource Management**: BOXVIDRA is engineered to utilize system resources efficiently, ensuring minimal strain on low-end hardware while delivering satisfactory performance.
+1. Open Termux and paste the installation command :
 
-2. **Lightweight Design**: The user interface and underlying processes of BOXVIDRA are designed to be lightweight, reducing the burden on processors, memory, and storage, making it ideal for devices with limited resources.
-  
-3. **Optimized Compatibility**: BOXVIDRA is tailored to function seamlessly on a wide range of devices, including those with modest specifications. Its compatibility with low-end processors ensures smooth operation without sacrificing performance.
-   
-4. **Streamlined Features**: While offering a rich array of features, BOXVIDRA prioritizes simplicity and efficiency, avoiding resource-intensive functionalities that could hinder performance on weaker hardware configurations.
-        
-5. **Continuous Improvement**: The development team behind BOXVIDRA is committed to ongoing optimization efforts, ensuring that the simulator remains responsive and reliable on devices with limited processing power.
-   
-6. Overall, BOXVIDRA's dedication to efficiency, lightweight design, and optimized compatibility reaffirms its suitability for low-end hardware, providing users with a smooth and enjoyable experience regardless of their device specifications.
+```bash
 
-## Conclusion
+curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/main/install && . ~/x
 
-In conclusion, BOXVIDRA stands out as a unique emulator tailored for low-end hardware. Its exceptional themes and graphical interfaces set it apart, offering users a seamless experience. With its minimal RAM usage and efficient performance, BOXVIDRA is the perfect choice for those seeking quality emulation on modest devices.
+```
+
+
+### Run boxvidra :
+* `boxvidra` To Run Boxvidra 
+* `boxvidra --update` To Update Boxvidra
+* `boxvidra --reinstall` To Reinstall Boxvidra
+* `boxvidra --uninstall ` To Uninstall Boxvidra
+
+
+### Requirements :
+
+* `Processor` Snapdragon 665 and above
+* `Ram` 3 or 4 GB Ram
+* `Storage` 8-12 GB
+* `GB that is consumed from the internet` 5 GB
+
+### Recommend Settings :
+* `DXVK` 2.2 gplasync or 2.3 gplasync
+* `Turnip` V7 or V4 or V3
+* `Primary Cores` 7 Cores
+* `HUD` Mangohud (only for wow64)
+* `Wine` 8.18 Staging for (wow64) and 8.25 for (box86-64)
+* `Theme` Windows 10 Theme (red, gaming) or
+Windows 10 Theme (light) or Windows 11 Theme (light).
+
+## The themes :
+
+You can change the theme you want with a wide library of themes :
+* `Windows 11 Theme Light`
+
+* `Windows 10 Theme Light`
+
+* `Windows 10 Theme Red, Gaming`
+
+* `Windows 7 Theme`
+
+* `Windows XP Theme`
+
+* `Windows 95 Theme`
+
+* `MacOS Theme`
+
+
+## HUD :
+
+You can change the hud to show the GPU usage, CPU and FPS rate, also you can install `MANGOHUD` for more information and better appearance.
+
+
+
+## Boxvidra configuration application :
+
+Through it you can completely modify the system, and apply the appropriate settings to give you the best performance, With all versions of dxvk, wined3d, turnip and virgl.
+
+
+### Recommend setup for termux-x11 :
+
+* `resolution mode` exact or native
+
+* `Resolution` 1280x720
+
+* `Reseed Screen While Soft Keyboard is open` OFF
+* `Show additional keyboard` OFF
+
+* `Fullscreen on device display` ON
+
+* `Force Landscape orientation` ON
+
+
+
+## Controllers :
+
+* `Input bridge` app is required if you want to make a control buttons in the screen, also you can use `Xinput` bridge.
+
+
+### Thanks to :
+* `Damon king`
+* `Tricky Guy`
+* `Nour El-deen`
+* `amorest (pedro)`
+* `Dogmaxz`
+* `Yuuto`
+* `Pc backup`
+* `Aman`
+* `Solider YT`
+* `Hunter blade`
+* `Ahmed bin ali`
+* `Ali Alsaadi`
+
+
+## Third party packages and resources :
+
+
+
+[Box64](https://github.com/ptitSeb/box64)
+
+
+
+[Box86](https://github.com/ptitSeb/box86)
+
+
+
+[DXVK](https://github.com/doitsujin/dxvk)
+
+
+[DXVK-GPLASYNC](https://gitlab.com/Ph42oN/dxvk-gplasync)
+
+
+[DXVK-ASYNC](https://github.com/Sporif/dxvk-async)
+
+
+[D8VK](https://github.com/AlpyneDreams/d8vk)
+
+
+[VKD3D](https://github.com/lutris/vkd3d)
+
+
+[Mesa](https://docs.mesa3d.org/license.html)
