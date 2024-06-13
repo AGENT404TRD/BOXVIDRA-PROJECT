@@ -1,4 +1,5 @@
-![Boxvidra Logo]()
+![logo](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/8ddfaff0-ca0b-4196-8f45-b935cecd37ad)
+
 
 
 **BOXVIDRA EMULATOR** is a project created by [AGENT 404 (The owner and the main developer], [AGENT 301], [AGENT 202], [AGENT 17]
@@ -47,18 +48,31 @@ Windows 10 Theme (light) or Windows 11 Theme (light).
 
 You can change the theme you want with a wide library of themes :
 * `Windows 11 Theme Light`
+  
+![IMG_20240614_023409_957](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/528b156b-f8f8-442d-97b2-ba72aa41c0d4)
 
 * `Windows 10 Theme Light`
+  
+![Screenshot_2024-06-12-23-32-48-894_com termux x11-edit](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/e6d79016-47c2-4a2a-8630-7cf9099534c5)
 
 * `Windows 10 Theme Red, Gaming`
+  
+![Windows10red](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/17f82cf3-a347-4535-b015-8f121ae4c583)
 
 * `Windows 7 Theme`
+  
+![IMG_20240614_023354_471](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/86caa66a-b530-4858-aef0-584663e61155)
 
 * `Windows XP Theme`
+![WindowsXP2](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/b8ae6aba-6d86-437f-bf3d-d8e87771c2ac)
 
 * `Windows 95 Theme`
+  
+![windowsXP](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/7baa170d-7356-49f2-97f0-0eda7f4e87ee)
 
 * `MacOS Theme`
+  
+![IMG_20240614_023322_567](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/9c1626f7-a00c-4350-bd25-593c751f220d)
 
 
 ## HUD :
