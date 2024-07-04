@@ -16,7 +16,7 @@ This emulator works with xfce4, box64, and box86, and contains many features tha
 
 ```bash
 
-curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/main/install && . ~/x
+curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-EMULATOR/main/install && . ~/x
 
 ```
 
@@ -47,10 +47,6 @@ Windows 10 Theme (light) or Windows 11 Theme (light).
 ## The themes :
 
 You can change the theme you want with a wide library of themes :
-* `Windows 11 Theme Light`
-  
-![IMG_20240614_023409_957](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/528b156b-f8f8-442d-97b2-ba72aa41c0d4)
-
 * `Windows 10 Theme Light`
   
 ![Screenshot_2024-06-12-23-32-48-894_com termux x11-edit](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/e6d79016-47c2-4a2a-8630-7cf9099534c5)
@@ -63,16 +59,10 @@ You can change the theme you want with a wide library of themes :
   
 ![IMG_20240614_023354_471](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/86caa66a-b530-4858-aef0-584663e61155)
 
-* `Windows XP Theme`
-![WindowsXP2](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/b8ae6aba-6d86-437f-bf3d-d8e87771c2ac)
-
 * `Windows 95 Theme`
   
 ![windowsXP](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/7baa170d-7356-49f2-97f0-0eda7f4e87ee)
 
-* `MacOS Theme`
-  
-![IMG_20240614_023322_567](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/9c1626f7-a00c-4350-bd25-593c751f220d)
 
 
 ## HUD :
