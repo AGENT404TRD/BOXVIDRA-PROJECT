@@ -2,7 +2,7 @@
 
 
 
-**BOXVIDRA EMULATOR** is a project created by [AGENT 404 (The owner and the main developer], [AGENT 301], [AGENT 202], [AGENT 17]
+**BOXVIDRA EMULATOR** is a project created by [AGENT 404 (The owner and the main developer], [Shaahad Hossam Mustafa Ahmed Abdel Salam (The second owner and the second main developer], [AGENT 301], [AGENT 202], [AGENT 17]
 This emulator works with xfce4, box64, and box86, and contains many features that make it a real PC emulator, such as themes, browsers, programs, running PC games, etc..
 
 
@@ -49,12 +49,18 @@ Windows 10 Theme (light) or Windows 11 Theme (light).
 You can change the theme you want with a wide library of themes :
 * `Windows 10 Theme Light`
   
-![Screenshot_2024-06-12-23-32-48-894_com termux x11-edit](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/e6d79016-47c2-4a2a-8630-7cf9099534c5)
+![Screenshot_2024-07-02-17-19-12-482_com termux x11-edit](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/assets/158003190/b64d88c8-6a55-4aa3-a1e5-a668a39b4751)
 
-* `Windows 10 Theme Red, Gaming`
+
+* `Windows 10 Theme Red, Gaming Theme`
   
 ![Windows10red](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/17f82cf3-a347-4535-b015-8f121ae4c583)
 
+* `Windows 10 Purple, Space Theme`
+
+![Screenshot_2024-07-02-16-47-43-541_com termux x11-edit](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/assets/158003190/b012ab8a-b52b-413e-9c1b-a459fa69476f)
+
+  
 * `Windows 7 Theme`
   
 ![IMG_20240614_023354_471](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/86caa66a-b530-4858-aef0-584663e61155)
@@ -108,8 +114,6 @@ Through it you can completely modify the system, and apply the appropriate setti
 * `Solider YT`
 * `Hunter blade`
 * `Ahmed bin ali`
-* `Ali Alsaadi`
-
 
 ## Third party packages and resources :
 
