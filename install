@@ -4,12 +4,12 @@ clear
 sleep 2
 echo -e "\e[36m[+] Installing Required packages\e[0m"
 termux-setup-storage
-pkg update -y &>/dev/null
+pkg update -y
 termux-change-repo
-pkg upgrade -y &>/dev/null
-pkg install wget -y &>/dev/null
-pkg install git -y &>/dev/null
-pkg install hashdeep -y &>/dev/null
+pkg upgrade -y
+pkg install wget -y
+pkg install git -y
+pkg install hashdeep -y
 clear
 sleep 2
 
