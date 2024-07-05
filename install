@@ -56,7 +56,7 @@ case "$i" in
     ;;
 2)
     echo -e "\e[36m[+] Installing Boxvidra Wow64 build\e[0m"
-    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.wow64.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Glibc/glibc.wow64.tar.xz
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.wow64.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Glibc/glibc.wow64.tar.xz
     sleep 2
     echo -e "\e[33m[i] Extracting Wow64 build glibc...\e[0m"
     tar -xf /data/data/com.termux/files/usr/glibc.wow64.tar.xz -C /data/data/com.termux/files/usr/
@@ -91,10 +91,10 @@ pkg install termux-x11-nightly -y &>/dev/null
 echo -e "\e[32m[✓] Termux X11 Packages Installed Successfully.\e[0m"
 echo -e "\n"
 
-echo -e "\e[32m[+] Installing Boxvidra Emulator Packages...\e[0m"
+echo -e "\e[36m[+] Installing Boxvidra Emulator Packages...\e[0m"
 pkg install tur-repo -y &>/dev/null
 pkg install xwayland -y &>/dev/null
-pkg install xorg-xrandr -y &>/dev/nul
+pkg install xorg-xrandr -y &>/dev/null
 pkg install p7zip -y &>/dev/null
 pkg install patchelf -y &>/dev/null
 pkg install ncurses-utils -y &>/dev/null
@@ -102,25 +102,25 @@ pkg install hashdeep -y &>/dev/null
 pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android -y &>/dev/null
 apt install android-tools -y &>/dev/null
 pkg install python-tkinter -y &>/dev/null
-echo -e "\e[32mBoxvidra Emulator Packages Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Boxvidra Emulator Packages Installed Successfully.\e[0m"
 echo -e "\n"
 sleep 3
 clear
 
 echo -e "\e[36m[+] Installing Xfce4, Plugins and Tools\e[0m"
 echo -e "\n"
-apt install xfce4 -y
+pkg install xfce4 -y
 apt install xfce4-whiskermenu-plugin -y
 apt install xfce4-screenshooter -y
-apt install xfce4-taskmgr -y
+apt install xfce4-taskmanager -y
 apt install xfce4-docklike-plugin -y
 apt install matchbox-keyboard -y
-echo -e "\e[32mXfce4, Plugins, Tools, Packages, Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Xfce4, Plugins, Tools, Packages, Installed Successfully.\e[0m"
 echo -e "\n"
 sleep 3
 clear
 
-echo -e "\e[32mInstalling Boxvidra Emulator Programs, Browsers, Etc..\e[0m"
+echo -e "\e[36m[+] Installing Boxvidra Emulator Programs, Browsers, Etc..\e[0m"
 echo -e "\n"
 pkg install gimp -y
 pkg install mpv -y
@@ -130,7 +130,7 @@ pkg install vlc-qt -y
 pkg install abiword -y
 apt install ristretto -y
 echo -e "\n"
-echo -e "\e[32mBoxvidra Emulator Programs, Browsers, Other Applications Installed Successfully.\e[0m"
+echo -e "\e[32m[✓] Boxvidra Emulator Programs, Browsers, Other Applications Installed Successfully.\e[0m"
 clear
 sleep 3
 
@@ -146,8 +146,7 @@ case "$i" in
 1)
    echo -n "Installing Windows 10 theme (Light) ..."
 
-   rm -r /data/data/com.termux/files/home/.config
-   wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.Light.tar.xz
+   wget -q --show-progress -O Windows.10.Light.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Themes/Windows.10.Light.tar.xz
    tar -xf Windows.10.Light.tar.xz
    cd 'Windows 10 Light'
    cp -r .icons /data/data/com.termux/files/home/
@@ -158,7 +157,9 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
+   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
+   cd 'PROGRAMS'
    cd ..
    rm -r 'Windows 10 Light'
    rm Windows.10.Light.tar.xz
@@ -169,8 +170,7 @@ case "$i" in
 2)
    echo -n "Installing Windows 10 theme (Dark) ..."
 
-   rm -r /data/data/com.termux/files/home/.config
-   wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.Dark.tar.xz
+   wget -q --show-progress -O Windows.10.Dark.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Themes/Windows.10.Dark.tar.xz
    tar -xf Windows.10.Dark.tar.xz
    cd 'Windows 10 Dark'
    cp -r .icons /data/data/com.termux/files/home/
@@ -181,6 +181,7 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
+   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
    cd ..
    rm -r 'Windows 10 Dark'
@@ -192,8 +193,7 @@ case "$i" in
 3)
    echo -n "Installing Windows 10 theme (Red, Gaming) ..."
 
-   rm -r /data/data/com.termux/files/home/.config
-   wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.Red.tar.xz
+   wget -q --show-progress -O Windows.10.Red.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Themes/Windows.10.Red.tar.xz
    tar -xf Windows.10.Red.tar.xz
    cd 'Windows 10 Red'
    cp -r .icons /data/data/com.termux/files/home/
@@ -204,6 +204,7 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
+   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
    cd ..
    rm -r 'Windows 10 Red'
@@ -215,8 +216,7 @@ case "$i" in
 4)
    echo -n "Installing Windows 10 theme (Purple, Space) ..."
 
-   rm -r /data/data/com.termux/files/home/.config
-   wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Themes/Windows.10.Purple.tar.xz
+   wget -q --show-progress -O Windows.10.Purple.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Themes/Windows.10.Purple.tar.xz
    tar -xf Windows.10.Purple.tar.xz
    cd 'Windows 10 Purple'
    cp -r .icons /data/data/com.termux/files/home/
@@ -227,6 +227,7 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
+   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
    cd ..
    rm -r 'Windows 10 Purple'
@@ -247,7 +248,7 @@ fi
 
 # CFG APPLICATION
 echo -e "\e[32m[+] Installing Boxvidra CFG Application...\e[0m"
-wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
+wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
 tar -xf BOXVIDRA.CFG.APP.tar.xz -C /data/data/com.termux/files/home/Desktop
 rm BOXVIDRA.CFG.APP.tar.xz
 echo -e "\e[32m[✓] Boxvidra CFG Application Installed Successfully.\e[0m"
