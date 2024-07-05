@@ -52,7 +52,19 @@ echo -n "Selected number: "
 read i
 case "$i" in
 1)
-    echo -e "\e[31m[ERR] Box86 Build Is Not Available (6 June).\e[0m"
+    echo -e "\e[36m[+] Installing Boxvidra Box86 build\e[0m"
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.box86.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Glibc/glibc.box86.tar.xz
+    sleep 2
+    echo -e "\e[33m[i] Extracting Box86 build glibc...\e[0m"
+    tar -xf /data/data/com.termux/files/usr/glibc.wow64.tar.xz -C /data/data/com.termux/files/usr/
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra /data/data/com.termux/files/usr/bin
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/vidra /data/data/com.termux/files/usr/bin
+    chmod +x /data/data/com.termux/files/usr/glibc/opt/scripts/*
+    chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
+    chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
+    rm /data/data/com.termux/files/usr/glibc.wow64.tar.xz
+    echo -e "\n"
+    echo -e "\e[32m[✓] Boxvidra Box86 build Installed Successfully.\e[0m"
     ;;
 2)
     echo -e "\e[36m[+] Installing Boxvidra Wow64 build\e[0m"
@@ -134,6 +146,11 @@ echo -e "\e[32m[✓] Boxvidra Emulator Programs, Browsers, Other Applications In
 clear
 sleep 3
 
+# CREATE DESKTOP FILE
+if [ ! -d ~/Desktop ]; then
+    mkdir -p ~/Desktop
+fi
+
 echo "Select a Theme to Download/Install"
 echo "1) Windows 10 Light Theme"
 echo "2) Windows 10 Dark Theme"
@@ -157,7 +174,8 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
-   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
+   cp -r BOXVIDRA-CFG /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
    cd 'PROGRAMS'
    cd ..
@@ -181,7 +199,8 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
-   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
+   cp -r BOXVIDRA-CFG /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
    cd ..
    rm -r 'Windows 10 Dark'
@@ -204,7 +223,8 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
-   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
+   cp -r BOXVIDRA-CFG /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
    cd ..
    rm -r 'Windows 10 Red'
@@ -227,7 +247,8 @@ case "$i" in
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
    unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
    cp -r WALLPAPERS /data/data/com.termux/files/home
-   cp PROGRAMS/xfce4-file-manager.desktop /data/data/com.termux/files/home/Desktop
+   cp -r BOXVIDRA-CFG /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
    rm /data/data/com.termux/files/home/.config.tar.xz
    cd ..
    rm -r 'Windows 10 Purple'
@@ -240,18 +261,6 @@ case "$i" in
    echo "Invalid option, please select a valid number."
    ;;
 esac
-
-# CREATE DESKTOP FILE
-if [ ! -d ~/Desktop ]; then
-    mkdir -p ~/Desktop
-fi
-
-# CFG APPLICATION
-echo -e "\e[32m[+] Installing Boxvidra CFG Application...\e[0m"
-wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
-tar -xf BOXVIDRA.CFG.APP.tar.xz -C /data/data/com.termux/files/home/Desktop
-rm BOXVIDRA.CFG.APP.tar.xz
-echo -e "\e[32m[✓] Boxvidra CFG Application Installed Successfully.\e[0m"
     
 clear
 sleep 2
