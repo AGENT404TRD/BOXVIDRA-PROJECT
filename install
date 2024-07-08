@@ -56,13 +56,13 @@ case "$i" in
     wget -q --show-progress -O /data/data/com.termux/files/usr/glibc.box86.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Glibc/glibc.box86.tar.xz
     sleep 2
     echo -e "\e[33m[i] Extracting Box86 build glibc...\e[0m"
-    tar -xf /data/data/com.termux/files/usr/glibc.wow64.tar.xz -C /data/data/com.termux/files/usr/
+    tar -xf /data/data/com.termux/files/usr/glibc.box86.tar.xz -C /data/data/com.termux/files/usr/
     cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra /data/data/com.termux/files/usr/bin
     cp /data/data/com.termux/files/usr/glibc/opt/scripts/vidra /data/data/com.termux/files/usr/bin
     chmod +x /data/data/com.termux/files/usr/glibc/opt/scripts/*
     chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
     chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
-    rm /data/data/com.termux/files/usr/glibc.wow64.tar.xz
+    rm /data/data/com.termux/files/usr/glibc.box86.tar.xz
     echo -e "\n"
     echo -e "\e[32m[✓] Boxvidra Box86 build Installed Successfully.\e[0m"
     ;;
