@@ -31,16 +31,16 @@ curl -s -o ~/x https://raw.githubusercontent.com/Chrisklucik0/BOXVIDRA-EMULATOR/
 ### Requirements :
 
 * `Processor` Snapdragon 665 and above
-* `Ram` 3 or 4 GB Ram
-* `Storage` 8-12 GB
-* `GB that is consumed from the internet` 5 GB
+* `Ram` 5 or 6 GB Ram
+* `Storage` 4-6 GB
+* `GB that is consumed from the internet` 3 GB
 
 ### Recommend Settings :
 * `DXVK` 2.2 gplasync or 2.3 gplasync
-* `Turnip` V7 or V4 or V3
-* `Primary Cores` 7 Cores
-* `HUD` Mangohud (only for wow64)
-* `Wine` 8.18 Staging for (wow64) and 8.25 for (box86-64)
+* `Turnip`V4 or V3
+* `Primary Cores` 8 Cores
+* `HUD` Mangohud (only for wow64 coming soon )
+* `Wine` 8.18 Staging for (wow64 coming soon ) and 8.25 for (box86-64)
 * `Theme` Windows 10 Theme (red, gaming) or
 Windows 10 Theme (light) or Windows 11 Theme (light).
 
@@ -86,12 +86,12 @@ Through it you can completely modify the system, and apply the appropriate setti
 
 * `resolution mode` exact or native
 
-* `Resolution` 1280x720
+* `Resolution` 800x600
 
-* `Reseed Screen While Soft Keyboard is open` OFF
+* `Reseed Screen While Soft Keyboard is open` ON
 * `Show additional keyboard` OFF
 
-* `Fullscreen on device display` ON
+* `Fullscreen on device display` OFF
 
 * `Force Landscape orientation` ON
 
@@ -99,7 +99,7 @@ Through it you can completely modify the system, and apply the appropriate setti
 
 ## Controllers :
 
-* `Input bridge` app is required if you want to make a control buttons in the screen, also you can use `Xinput` bridge.
+* `Input bridge` app is required if you want to make a control buttons in the screen, also you can use `Xinput` bridge. if you want use controller
 
 
 ### Thanks to :
@@ -114,7 +114,7 @@ Through it you can completely modify the system, and apply the appropriate setti
 * `Solider YT`
 * `Hunter blade`
 * `Ahmed bin ali`
-
+and me for mod
 ## Third party packages and resources :
 
 
