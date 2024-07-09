@@ -1,6 +1,6 @@
 ![logo](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/8ddfaff0-ca0b-4196-8f45-b935cecd37ad)
 
-everyone its not done this will not work wait like 7 hours there is an big bug
+if you have root and run it it will automatically install steam linux
 
 **BOXVIDRA EMULATOR** is a project created by [AGENT 404 (The owner and the main developer)], [Shaahad Hossam Mustafa Ahmed Abdel Salam (The second owner and the second main developer)], [AGENT 301], [AGENT 202], [AGENT 17]
 This emulator works with xfce4, box64, and box86, and contains many features that make it a real PC emulator, such as themes, browsers, programs, running PC games, etc..
