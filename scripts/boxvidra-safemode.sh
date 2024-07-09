@@ -1,5 +1,5 @@
 #!/data/data/com.termux/files/usr/bin/bash
-
+clear
 # Kill open X11 processes
 kill -9 $(pgrep -f "termux.x11") 2>/dev/null
 
