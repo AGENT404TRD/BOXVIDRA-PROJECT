@@ -1,9 +1,9 @@
 #!/bin/bash
 
-clear
+
 sleep 2
 echo -e "\e[36m[+] Installing Required packages\e[0m"
-termux-setup-storage
+
 pkg update -y
 termux-change-repo
 pkg upgrade -y
@@ -12,6 +12,10 @@ pkg install git -y
 pkg install hashdeep -y
 clear
 sleep 2
+pkg installl x11-repo
+termux-setup-storage
+sudo apt update 
+sudo apt upgrade
 
 echo -e "\e[33m[i] Setting up storage permissions..\e[0m"
 yes | termux-setup-storage &>/dev/null
@@ -24,7 +28,7 @@ while true; do
         echo -e "\e[31m[ERR] Storage permission denied\e[0m"
     fi
 done
-clear
+
 sleep 2
 
 echo -e "\e[36m[+] Installing Termux-am\e[0m"
@@ -41,12 +45,12 @@ if [ -e $PREFIX/glibc ]; then
         return 1
     fi
 fi
-
-INSTALL_WOW64=0
+clear
+INSTALL_BOX86=0
 
 echo "Select an option"
-echo "1) Install boxvidra with box86 build (6 June)"
-echo "2) Install boxvidra with wow64 build (Complete version)"
+echo "1) Install boxvidra with box86 build (completed verision)"
+
 echo ""
 echo -n "Selected number: "
 read i
@@ -84,8 +88,8 @@ case "$i" in
     ;;
 esac
 
-clear
-sleep 2
+
+sleep 3
 echo -e "\e[32m[+] Installing Termux Packages...\e[0m"
 apt-get clean -y
 apt-get update -y
@@ -95,14 +99,14 @@ pkg install root-repo -y
 apt-get -y --with-new-pkgs -o Dpkg::Options::="--force-confdef" upgrade
 echo -e "\e[32m[✓] Termux packages Installed Successfully.\e[0m"
 echo -e "\n"
-clear
+
 
 echo -e "\e[36m[+] Installing Termux X11 packages...\e[0m"
 pkg install x11-repo -y &>/dev/null
 pkg install termux-x11-nightly -y &>/dev/null
 echo -e "\e[32m[✓] Termux X11 Packages Installed Successfully.\e[0m"
 echo -e "\n"
-
+clear
 echo -e "\e[36m[+] Installing Boxvidra Emulator Packages...\e[0m"
 pkg install tur-repo -y &>/dev/null
 pkg install xwayland -y &>/dev/null
@@ -117,7 +121,7 @@ pkg install python-tkinter -y &>/dev/null
 echo -e "\e[32m[✓] Boxvidra Emulator Packages Installed Successfully.\e[0m"
 echo -e "\n"
 sleep 3
-clear
+
 
 echo -e "\e[36m[+] Installing Xfce4, Plugins and Tools\e[0m"
 echo -e "\n"
@@ -130,7 +134,7 @@ apt install matchbox-keyboard -y
 echo -e "\e[32m[✓] Xfce4, Plugins, Tools, Packages, Installed Successfully.\e[0m"
 echo -e "\n"
 sleep 3
-clear
+
 
 echo -e "\e[36m[+] Installing Boxvidra Emulator Programs, Browsers, Etc..\e[0m"
 echo -e "\n"
@@ -144,18 +148,17 @@ apt install ristretto -y
 echo -e "\n"
 echo -e "\e[32m[✓] Boxvidra Emulator Programs, Browsers, Other Applications Installed Successfully.\e[0m"
 clear
-sleep 3
-
+sleep 4
+clear
 # CREATE DESKTOP FILE
 if [ ! -d ~/Desktop ]; then
     mkdir -p ~/Desktop
 fi
 
-echo "Select a Theme to Download/Install"
-echo "1) Windows 10 Light Theme"
-echo "2) Windows 10 Dark Theme"
-echo "3) Windows 10 Red, Gaming Theme"
-echo "4) Windows 10 Purple, Space Theme"
+echo "Select a Theme to Download/Instal
+
+echo "1) Windows 10 Red, Gaming Theme"
+
 echo ""
 echo -n "Selected number : "
 read i
@@ -267,4 +270,5 @@ sleep 2
 
 echo -e "\e[32m[✓] Boxvidra Emulator Installed Successfully.\e[0m"
 echo -e "\n"
-echo "Type \"boxvidra\" To Start"
+echo "Type \"boxvidra\" To Start or wait 3 seconds
+boxvidra
