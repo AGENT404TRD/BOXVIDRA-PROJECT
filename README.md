@@ -29,12 +29,12 @@ curl -s -o ~/x https://raw.githubusercontent.com/Chrisklucik0/BOXVIDRA-EMULATOR/
 
 
 ### Requirements :
-
-* `Processor` Snapdragon 665 and above
+Android 10
+* `Processor` Snapdragon 655 and above
 * `Ram` 5 or 6 GB Ram
 * `Storage` 4-6 GB
 * `GB that is consumed from the internet` 3 GB
-
+Adreno 610
 ### Recommend Settings :
 * `DXVK` 2.2 gplasync or 2.3 gplasync
 * `Turnip`V4 or V3
@@ -100,7 +100,7 @@ Through it you can completely modify the system, and apply the appropriate setti
 ## Controllers :
 
 * `Input bridge` app is required if you want to make a control buttons in the screen, also you can use `Xinput` bridge. if you want use controller
-
+Or using only controller games
 
 ### Thanks to :
 * `Damon king`
