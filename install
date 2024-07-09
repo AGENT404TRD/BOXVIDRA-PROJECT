@@ -9,7 +9,7 @@ pkg upgrade -y
 pkg install wget
 pkg install git -y
 pkg install hashdeep -y
-
+pkg install x11-repo
 clear
 
 
@@ -31,7 +31,7 @@ echo -e "\e[36m[+] Installing Termux-am\e[0m"
 pkg install termux-am -y &>/dev/null
 echo -e "\e[32m[âœ“] Termux-am Installed Successfully\e[0m"
 echo -e "\n"
-
+clear
 if [ -e $PREFIX/glibc ]; then
     echo -n "Removing previous glibc. Continue? (Y/n) "
     read i
@@ -268,6 +268,6 @@ sleep 2
 echo -e "\e[32m[âœ“] Boxvidra Emulator Installed Successfully.\e[0m"
 echo -e "\n"
 echo "Type \"boxvidra\" To Start"
-boxvidra
+
 
 
