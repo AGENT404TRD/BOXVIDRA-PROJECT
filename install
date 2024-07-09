@@ -50,7 +50,7 @@ INSTALL_BOX86=0
 
 echo "Select an option"
 echo "1) Install boxvidra with box86 build (completed verision)"
-
+echo "2) install boxvidra wow64 (soon dont install right now)
 echo ""
 echo -n "Selected number: "
 read i
