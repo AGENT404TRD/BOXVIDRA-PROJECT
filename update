@@ -1,7 +1,8 @@
 #!/bin/bash
-
+clear
 pkg install python-tkinter -y
-
+sudo apt update
+sudo apt upgrade
 # CFG APPLICATION 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/BOXVIDRA.CFG.APP.tar.xz
 tar -xf BOXVIDRA.CFG.APP.tar.xz -C ~/Desktop
@@ -16,31 +17,31 @@ rm boxvidra-libs.tar.xz
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/configuration-app/boxvidra-prefix.tar.xz
 tar -xf boxvidra-prefix.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
 rm boxvidra-prefix.tar.xz
-clear
+
 
 # BOXVIDRA SCRIPTS (WOW64) (BOX86)
 echo "Select an option :"
 echo "1) Update box86-64 scripts for box86-64 build "
-echo "2) Update wow64 scripts for wow64 build "
+
 echo ""
 echo -n "Selected number: "
 read i
 case "$i" in
 1)
-clear
+
 echo -n "Installing Boxvidra (box86) Scripts..."
 # DOWNLOAD 
 wget https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/releases/download/Scripts/Scripts.tar.xz
-
+clear
 # EXTRACT 
 tar -xf Scripts.tar.xz
-
+clear
 # REMOVE 
 rm -r /data/data/com.termux/files/usr/glibc/opt/scripts
-
+clear
 # CREATE
 mkdir -p /data/data/com.termux/files/usr/glibc/opt/scripts
-
+clear
 # COPY 1
 cp Scripts/boxvidra /data/data/com.termux/files/usr/bin
 
@@ -123,7 +124,7 @@ cd ..
 rm -r 'WindowsXP'
 rm WindowsXP.tar.xz
 clear
-echo -n "WindowsXP Theme Installed Successfully"
+echo -n "Windows 10 red gaming  Theme Installed Successfully"
 echo -n "Boxvidra Emulator Updated Successfully . . ."
 sleep 3
 clear
