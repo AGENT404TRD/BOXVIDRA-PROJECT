@@ -1,5 +1,5 @@
 #!/bin/bash
-
+pkg update -y && pkg install wget curl proot tar -y && wget
 pkg install root-repo
 sleep 2
 echo -e "\e[36m[+] Installing Required packages\e[0m"
