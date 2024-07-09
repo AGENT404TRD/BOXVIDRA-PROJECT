@@ -158,7 +158,11 @@ fi
 echo "Select a Theme to Download/Instal
 
 echo "1) Windows 10 Red, Gaming Theme"
+echo "2) Windows.10.Dark.tar.xz
+echo "3) Windows.7.tar.xz
 
+echo"4) WindowsXP.tar.xz 
+echo "5) Windows.10.Light.tar.xz
 echo ""
 echo -n "Selected number : "
 read i
