@@ -1,19 +1,19 @@
 #!/bin/bash
 
-
+pkg install root-repo
 sleep 2
 echo -e "\e[36m[+] Installing Required packages\e[0m"
-
+clear
 pkg update -y
 termux-change-repo
 pkg upgrade -y
 pkg install wget -y
 pkg install git -y
 pkg install hashdeep -y
-clear
+pkg install root-repo
 sleep 2
 pkg installl x11-repo
-termux-setup-storage
+pkg install android-tools
 sudo apt update 
 sudo apt upgrade
 
@@ -28,7 +28,7 @@ while true; do
         echo -e "\e[31m[ERR] Storage permission denied\e[0m"
     fi
 done
-
+clear
 sleep 2
 
 echo -e "\e[36m[+] Installing Termux-am\e[0m"
@@ -160,7 +160,6 @@ echo "Select a Theme to Download/Instal
 echo "1) Windows 10 Red, Gaming Theme"
 echo "2) Windows.10.Dark.tar.xz
 echo "3) Windows.7.tar.xz
-
 echo"4) WindowsXP.tar.xz 
 echo "5) Windows.10.Light.tar.xz
 echo ""
