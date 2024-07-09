@@ -1,9 +1,14 @@
 #!/bin/bash
 
+pkg install tsu
+pkg install android-tools
 clear
+termux-setup-storage
+sudo apt update
+sudo apt upgrade
 sleep 2
 echo -e "\e[36m[+] Installing Required packages\e[0m"
-termux-setup-storage
+
 pkg update -y
 termux-change-repo
 pkg upgrade -y
@@ -12,7 +17,7 @@ pkg install git -y
 pkg install hashdeep -y
 clear
 sleep 2
-
+sudo apt-install steam
 echo -e "\e[33m[i] Setting up storage permissions..\e[0m"
 yes | termux-setup-storage &>/dev/null
 sleep 2
@@ -24,7 +29,7 @@ while true; do
         echo -e "\e[31m[ERR] Storage permission denied\e[0m"
     fi
 done
-clear
+
 sleep 2
 
 echo -e "\e[36m[+] Installing Termux-am\e[0m"
@@ -45,7 +50,7 @@ fi
 INSTALL_WOW64=0
 
 echo "Select an option"
-echo "1) Install boxvidra with box86 build (6 June)"
+echo "1) Install boxvidra with box86 build (not done but you can install)
 echo "2) Install boxvidra with wow64 build (Complete version)"
 echo ""
 echo -n "Selected number: "
@@ -95,7 +100,9 @@ pkg install root-repo -y
 apt-get -y --with-new-pkgs -o Dpkg::Options::="--force-confdef" upgrade
 echo -e "\e[32m[âœ“] Termux packages Installed Successfully.\e[0m"
 echo -e "\n"
-clear
+pkg install x11-repo
+pkg update 
+pkg upgrade
 
 echo -e "\e[36m[+] Installing Termux X11 packages...\e[0m"
 pkg install x11-repo -y &>/dev/null
@@ -267,4 +274,5 @@ sleep 2
 
 echo -e "\e[32m[âœ“] Boxvidra Emulator Installed Successfully.\e[0m"
 echo -e "\n"
-echo "Type \"boxvidra\" To Start"
+echo "wait 5 seconds
+boxvidra
