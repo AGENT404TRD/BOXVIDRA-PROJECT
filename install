@@ -1,17 +1,18 @@
 #!/bin/bash
+pkg install root-repo -y
 
-clear
-sleep 2
+
 echo -e "\e[36m[+] Installing Required packages\e[0m"
 termux-setup-storage
 pkg update -y
-termux-change-repo
+
 pkg upgrade -y
-pkg install wget -y
+pkg install wget
 pkg install git -y
 pkg install hashdeep -y
+
 clear
-sleep 2
+
 
 echo -e "\e[33m[i] Setting up storage permissions..\e[0m"
 yes | termux-setup-storage &>/dev/null
@@ -267,4 +268,5 @@ sleep 2
 
 echo -e "\e[32m[âœ“] Boxvidra Emulator Installed Successfully.\e[0m"
 echo -e "\n"
-echo "Type \"boxvidra\" To Start"
+echo "Thanks for installing boxvidra modded verision wait 4 seconds
+boxvidra
