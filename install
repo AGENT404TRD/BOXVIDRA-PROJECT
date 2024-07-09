@@ -2,8 +2,7 @@
 pkg install root-repo -y
 
 
-echo -e "\e[36m[+] Installing Required packages\e[0m"
-termux-setup-storage
+echo -e "\e[36m[+] Installing Required packages\e[0m"termux-setup-storage
 pkg update -y
 
 pkg upgrade -y
@@ -268,5 +267,7 @@ sleep 2
 
 echo -e "\e[32m[âœ“] Boxvidra Emulator Installed Successfully.\e[0m"
 echo -e "\n"
-echo "
+echo "Type \"boxvidra\" To Start"
 boxvidra
+
+
