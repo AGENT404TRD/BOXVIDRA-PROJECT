@@ -1,6 +1,6 @@
 #!/bin/bash
 pkg install root-repo -y
-
+‌
 
 echo -e "\e[36m[+] Installing Required packages\e[0m"termux-setup-storage
 pkg update -y
