@@ -1,5 +1,8 @@
 ![logo](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/8ddfaff0-ca0b-4196-8f45-b935cecd37ad)
 
+[![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/boxvidra)
+[![discord](https://img.shields.io/discord/308323056592486420?logo=discord)](https://discord.com/invite/QuxeRdwk)
+
 **BOXVIDRA PROJECT** Created By :
 * `AGENT 404 (The Owner)`
 * `Ms.Edryll (The Sec-Owner)`
