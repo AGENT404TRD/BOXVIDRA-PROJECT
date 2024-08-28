@@ -111,10 +111,25 @@ You can change the theme you want with a wide library of themes :
 
 ## Boxvidra Proot Themes :
 
+* `Windows 11 Light Theme`
+
+![Screenshot_2024-08-28-03-47-27-044_com termux x11-edit](https://github.com/user-attachments/assets/629ccc6d-b8df-4eae-970b-28da0ab858e8)
+
+![Screenshot_2024-08-28-03-47-46-022_com termux x11-edit](https://github.com/user-attachments/assets/06eb3ed6-d8d7-42fb-80b4-a5e59d4ba484)
+
+![Screenshot_2024-08-28-03-49-17-014_com termux x11-edit](https://github.com/user-attachments/assets/cb0f12ed-b8b5-420e-9dbb-a593d8441b28)
+
+* `Windows 11 Dark Theme`
+  
+![Screenshot_2024-08-28-03-55-44-001_com termux x11-edit](https://github.com/user-attachments/assets/1248905d-61e2-4199-8e9c-af63d202842d)
+
+![Screenshot_2024-08-28-03-56-11-324_com termux x11-edit](https://github.com/user-attachments/assets/75a82f08-4aa7-4200-9d28-f3ea2040e8ff)
+
+![Screenshot_2024-08-28-03-57-05-063_com termux x11-edit](https://github.com/user-attachments/assets/777258de-1608-4ceb-9f1c-c3612b897ec3)
 
 ## Another Settings And Informations About Boxvidra Native And Boxvidra Proot:
 
-## HUD :
+# HUD :
 
 You can change the hud to show the GPU usage, CPU and FPS rate, also you can install `MANGOHUD` for more information and better appearance.
 
