@@ -22,15 +22,13 @@ This project contains `Five` `Systems/Emulators` :
 ```bash
 
 curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-PROJECT/boxvidra/install-native && . ~/x
-
-
 ```
+
 * `Boxvidra Emulator Proot` :
+
 ```bash
 
 curl -s -o ~/x https://raw.githubusercontent.com/AGENT404TRD/BOXVIDRA-PROJECT/boxvidra/install-proot && . ~/x
-
-
 ```
 
 #
