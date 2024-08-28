@@ -1,6 +1,8 @@
 ![logo](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/8ddfaff0-ca0b-4196-8f45-b935cecd37ad)
 
-**BOXVIDRA PROJECT** is a project created by`AGENT 404 (The Owner)` `Ms.Edryll (The Sec-Owner)` `AGENT 301` `AGENT 202` `AGENT 17`
+**BOXVIDRA PROJECT** Created By :
+* `AGENT 404 (The Owner)` `Ms.Edryll (The Sec-Owner)`
+* `AGENT 301` `AGENT 202` `AGENT 17`
 
 
 This project contains `Five` `Systems/Emulators` : 
@@ -109,12 +111,10 @@ You can change the theme you want with a wide library of themes :
 ![windowsXP](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/7baa170d-7356-49f2-97f0-0eda7f4e87ee)
 
 
-## Boxvidra Native Themes :
+## Boxvidra Proot Themes :
 
 
 ## Another Settings And Informations About Boxvidra Native And Boxvidra Proot:
-
-#
 
 ## HUD :
 
