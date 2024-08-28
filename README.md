@@ -1,7 +1,8 @@
 ![logo](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/8ddfaff0-ca0b-4196-8f45-b935cecd37ad)
 
 **BOXVIDRA PROJECT** Created By :
-* `AGENT 404 (The Owner)` `Ms.Edryll (The Sec-Owner)`
+* `AGENT 404 (The Owner)`
+* `Ms.Edryll (The Sec-Owner)`
 * `AGENT 301` `AGENT 202` `AGENT 17`
 
 
