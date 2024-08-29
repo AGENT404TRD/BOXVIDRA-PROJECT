@@ -16,7 +16,8 @@
 
 
 This project contains `Five` `Systems/Emulators` : 
-* `Boxvidra Emulator Native` `Boxvidra Emulator Proot`
+* `Boxvidra Emulator Native`
+* `Boxvidra Emulator Proot`
 * `Vionex` `Alaix` `Brovix`
 
 # Boxvidra Emulator Native And Boxvidra Emulator Proot :
