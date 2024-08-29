@@ -1,4 +1,5 @@
-![1724897830915](https://github.com/user-attachments/assets/cf7b4425-a4c3-4437-b72c-203f4331dc0c)
+![1724898906268](https://github.com/user-attachments/assets/bd30c790-36eb-4523-9129-a73f6a4554e4)
+
 
 
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/boxvidra)
