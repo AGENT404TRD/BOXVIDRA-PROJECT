@@ -1,4 +1,5 @@
-![logo](https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR-BETA-/assets/158003190/8ddfaff0-ca0b-4196-8f45-b935cecd37ad)
+![1724897830915](https://github.com/user-attachments/assets/cf7b4425-a4c3-4437-b72c-203f4331dc0c)
+
 
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/boxvidra)
 [![discord](https://img.shields.io/discord/308323056592486420?logo=discord)](https://discord.com/invite/QuxeRdwk)
