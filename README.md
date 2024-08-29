@@ -3,6 +3,7 @@
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/boxvidra)
 [![discord](https://img.shields.io/discord/308323056592486420?logo=discord)](https://discord.com/invite/QuxeRdwk)
 
+[![Youtube](https://www.google.com/search?client=ms-android-xiaomi-rvo3&sca_esv=8d507574ebaa0a20&q=youtube+image&udm=2&fbs=AEQNm0Aa4sjWe7Rqy32pFwRj0UkWd8nbOJfsBGGB5IQQO6L3J11zQ_lP3kmMyhUHPwg9zovyrWsyPmczcr_0hVemgO3wg0GnwYPCrLUpMNRxXp4yxOS9689vgX6ELIqJ5axI5mDDZtXyw34eESARkWoisu9HPUkuaDQbk0VIPAsdqxhMSW8zjinOtmU11JRVkaVik1FaFuSgkxPnoflW6JmkJEil0GSlSQ&sa=X&sqi=2&ved=2ahUKEwiZkIDyh5mIAxVeB9sEHdgzDvEQtKgLegQIHhAB&biw=400&bih=702&dpr=2.71#vhid=7J6wiJHkuqR2VM&vssid=mosaic)](https://discord.com/invite/QuxeRdwk)
 **BOXVIDRA PROJECT** Created By :
 * `AGENT 404 (The Owner)`
 * `Ms.Edryll (The Sec-Owner)`
