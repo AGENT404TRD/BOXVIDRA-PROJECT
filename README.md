@@ -2,7 +2,7 @@
 
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/boxvidra)
 [![discord](https://img.shields.io/discord/308323056592486420?logo=discord)](https://discord.com/invite/QuxeRdwk)
-[![Youtube](https://img.shields.io/badge/YouTube-red?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/@agent-404.?si=jdTuWPibmowtX0Ic)
+[![Buy me a coffee](https://img.shields.io/badge/buy_me_a-coffee-FFDD00?style=shield&logo=paypal)]()
 
 **BOXVIDRA PROJECT** Created By :
 * `AGENT 404 (The Owner)`
