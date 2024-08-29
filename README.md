@@ -3,6 +3,7 @@
 [![telegram](https://img.shields.io/badge/chat-telegram-brightgreen.svg?logo=telegram&style=flat-square)](https://t.me/boxvidra)
 [![discord](https://img.shields.io/discord/308323056592486420?logo=discord)](https://discord.com/invite/QuxeRdwk)
 [![Buy me a coffee](https://img.shields.io/badge/buy_me_a-coffee-FFDD00?style=shield&logo=paypal)]()
+[![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=fff&style=flat)](https://wa.me/qr/U7UNZ5TNYCPVE1)
 [![Facebook](https://img.shields.io/badge/Facebook-Connect-brightgreen?style=for-the-badge&labelColor=black&logo=facebook)](https://www.facebook.com/profile.php?id=61560768771619)
 
 **BOXVIDRA PROJECT** Created By :
