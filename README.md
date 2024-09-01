@@ -27,13 +27,15 @@ This project contains `Five` `Systems/Emulators` :
 To install either the **Boxvidra Emulator Native** or **Boxvidra Emulator Proot**, please download and install the following applications:
 
 - **Termux**: A terminal emulator for Android that allows you to run Linux commands on your device.  
-  [![Download Termux](https://img.shields.io/badge/Download-Termux-brightgreen?style=for-the-badge&logo=android)](https://f-droid.org/repo/com.termux_118.apk)
+  [![Download Termux](https://img.shields.io/badge/Download-Termux-brightgreen?style=for-the-badge&logo=android)](https://f-droid.org/repo/com.termux_118.apk) - click to download
 
 - **Termux-X11 (Xserver)**: Required for running graphical applications within Termux, providing a graphical user interface.  
-  [![Download Termux-X11](https://img.shields.io/badge/Download-Termux--X11-blue?style=for-the-badge&logo=linux)](https://github.com/ahmad1abbadi/extra/releases/download/apps/termux-x11.apk)
+  [![Download Termux-X11](https://img.shields.io/badge/Download-Termux--X11-blue?style=for-the-badge&logo=linux)](https://github.com/ahmad1abbadi/extra/releases/download/apps/termux-x11.apk) - click to download
+  
 
 - **Input Bridge v0.0.7 (Overlay HUD/Controller)**: This application allows you to create a touch screen overlay or heads-up display (HUD) that can function as a customizable controller.  
-  [![Download Input Bridge](https://img.shields.io/badge/Download-Input%20Bridge-ff69b4?style=for-the-badge&logo=controller)](https://github.com/ahmad1abbadi/extra/releases/download/apps/input+bridge+0.0.7.apk)
+  [![Download Input Bridge](https://img.shields.io/badge/Download-Input%20Bridge-ff69b4?style=for-the-badge&logo=controller)](https://github.com/ahmad1abbadi/extra/releases/download/apps/input+bridge+0.0.7.apk) - click to download
+
 
 
 1. Open Termux and paste the installation command :
