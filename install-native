@@ -45,7 +45,7 @@ fi
 INSTALL_WOW64=0
 
 echo "Select an option"
-echo "1) Install Boxvidra Emulator Native With Box64-86 Build (4 September Update)"
+echo "1) Install Boxvidra Emulator Native With Box64-86 Build (4 Sep Update)"
 echo "2) Install Boxvidra Emulator Native With Wow64 Build (Not Available)"
 echo -n "Selected number: "
 read i
