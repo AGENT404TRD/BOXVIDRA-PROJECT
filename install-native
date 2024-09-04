@@ -253,8 +253,8 @@ case "$i" in
 2)
    echo -n "Installing Boxvidra Configuration Application ..."
 
-   cd /data/data/com.termux/files/usr/glibc/opt/libs/'boxvidra cfg'/
-   cp * /data/data/com.termux/files/home/
+   cd /data/data/com.termux/files/usr/glibc/opt/libs/'boxvidra-cfg'
+   cp -r * /data/data/com.termux/files/home/
    cd
    ;;
 *)
