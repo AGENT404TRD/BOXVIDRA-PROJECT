@@ -1,0 +1,505 @@
+#!/bin/bash
+
+pkg install ncurses-utils -y &>/dev/null
+pkg install wget -y &>/dev/null
+cd /data/data/com.termux/files/
+wget -q https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/termux-style.tar.xz
+tar -xf termux-style.tar.xz
+rm termux-style.tar.xz
+cd
+clear
+
+. $PREFIX/glibc/opt/termux-style/termux-style
+. $PREFIX/glibc/opt/scripts/dialogs
+. $PREFIX/glibc/opt/scripts/configs
+apply-termux-style 
+
+## Complete Version Notice 
+clear
+mkdir -p "/data/data/com.termux/files/usr/bin/notice"
+if [ ! -e "/data/data/com.termux/files/usr/bin/notice/notice1_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice/notice1_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Notice From AGENT 404 \nYou're About To Install Boxvidra Native, Make Sure That You Have 5 GB As A Free Space, Thank you."
+fi
+##
+
+clear
+echo "Installing Required Aackages And Updating, Upgrading Termux Packages . . ."
+echo -e "\n"
+termux-setup-storage
+pkg update -y
+termux-change-repo
+pkg upgrade -y
+pkg install wget -y
+pkg install git -y
+pkg install hashdeep -y
+pkg install x11-repo
+sleep 2
+clear
+
+# Setting Up The Storage
+echo -e "\e[33m[i] Setting up storage permissions..\e[0m"
+yes | termux-setup-storage &>/dev/null
+sleep 2
+clear
+while true; do
+    if [ -d ~/storage/shared ]; then
+        break
+    else
+        echo -e "\e[31m[ERR] Storage permission denied\e[0m"
+    fi
+done
+
+# Installing Termux-Am
+clear
+sleep 2
+echo -e "\e[36m[+] Installing Termux-am\e[0m"
+pkg install termux-am -y &>/dev/null
+echo -e "\e[32m[✓] Termux-am Installed Successfully\e[0m"
+echo -e "\n"
+clear
+
+# Installing The Glibc
+    dialog_menu "\Z6Select A Glibc To Install" "" \
+    "1" "\Z6Install Box64-86 Glibc \Z5(v1.0, Available)" \
+    "2" "\Z6Install Wow64 Glibc \Z5(v1.0, Not Available)" \
+
+case $? in
+1)
+    echo -e "\e[36m[+] Installing Boxvidra Box64-86 Glibc\e[0m"
+    wget -q --show-progress -O /data/data/com.termux/files/glibc.box64-86.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.box64-86.tar.xz
+    sleep 2
+    echo -e "\e[33m[i] Extracting Box64-86 Glibc . . .\e[0m"
+    tar -xf /data/data/com.termux/files/glibc.box64-86.tar.xz -C /data/data/com.termux/files/
+    sleep 2
+    echo -e "\e[32m[✓] Boxvidra Emulator Native (Box64-86 Glibc-Divided) Installed Successfully.\e[0m"
+    sleep 2
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc/glibc.box64-86.opt.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.box64-86.opt.tar.xz
+    sleep 2
+    echo -e "\e[33m[i] Extracting Box64-86 Glibc (Opt) . . .\e[0m"
+    tar -xf /data/data/com.termux/files/usr/glibc/glibc.box64-86.opt.tar.xz -C /data/data/com.termux/files/usr/glibc/
+    sleep 2
+    echo -e "\e[32m[✓] Boxvidra Emulator Native (Box64-86 Opt) Installed Successfully.\e[0m"
+    sleep 2
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc/opt/glibc.box64-86.scripts.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.box64-86.scripts.tar.xz
+    sleep 2
+    echo -e "\e[33m[i] Extracting Box64-86 Glibc (Scripts) . . .\e[0m"
+    tar -xf /data/data/com.termux/files/usr/glibc/opt/glibc.box64-86.scripts.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
+    sleep 2
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra /data/data/com.termux/files/usr/bin
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra-native /data/data/com.termux/files/usr/bin
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/vidra /data/data/com.termux/files/usr/bin
+    chmod +x /data/data/com.termux/files/usr/glibc/opt/scripts/*
+    chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
+    chmod 777 /data/data/com.termux/files/usr/bin/boxvidra-native
+    chmod 777 /data/data/com.termux/files/usr/bin/vidra
+    rm /data/data/com.termux/files/glibc.box64-86.tar.xz
+    rm /data/data/com.termux/files/usr/glibc/opt/glibc.box64-86.scripts.tar.xz
+    rm /data/data/com.termux/files/usr/glibc/glibc.box64-86.opt.tar.xz    
+    sleep 3
+    echo -e "\n"
+    clear
+## Installed Successfully Box64-86
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice2"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice2/notice2_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice2/notice2_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Box64-86 Glibc Installed Successfully"
+fi
+    sleep 3
+    ;;
+2)
+## Wow64 Is Not Available
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice3"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice3/notice3_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice3/notice3_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Wow64 Glibc Is Not Available At The Moment, Install Box64-86 Glibc."
+fi
+    sleep 1
+    clear
+    ;;
+*)
+    return 1
+    ;;
+esac
+
+# Continue
+sleep 2
+clear
+echo -e "\e[32m[+] Installing Termux Packages...\e[0m"
+apt-get clean -y
+apt-get update -y
+apt-get upgrade -y
+pkg install wget -y
+pkg install root-repo -y
+apt-get -y --with-new-pkgs -o Dpkg::Options::="--force-confdef" upgrade
+echo -e "\e[32m[✓] Termux packages Installed Successfully.\e[0m"
+echo -e "\n"
+clear
+
+echo -e "\e[36m[+] Installing Termux X11 packages...\e[0m"
+pkg install x11-repo -y &>/dev/null
+pkg install termux-x11-nightly -y &>/dev/null
+echo -e "\e[32m[✓] Termux X11 Packages Installed Successfully.\e[0m"
+echo -e "\n"
+
+echo -e "\e[36m[+] Installing Boxvidra Emulator Packages...\e[0m"
+pkg install tur-repo -y &>/dev/null
+pkg install xwayland -y &>/dev/null
+pkg install xorg-xrandr -y &>/dev/null
+pkg install p7zip -y &>/dev/null
+pkg install patchelf -y &>/dev/null
+pkg install ncurses-utils -y &>/dev/null
+pkg install hashdeep -y &>/dev/null
+pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android -y &>/dev/null
+apt install android-tools -y &>/dev/null
+pkg install python-tkinter -y &>/dev/null
+echo -e "\e[32m[✓] Boxvidra Emulator Packages Installed Successfully.\e[0m"
+echo -e "\n"
+sleep 2
+clear
+sleep 3
+
+echo -e "\e[36m[+] Installing Xfce4, Plugins and Tools\e[0m"
+echo -e "\n"
+pkg install xfce4 -y
+apt install xfce4-whiskermenu-plugin -y
+apt install xfce4-screenshooter -y
+apt install xfce4-taskmanager -y
+apt install xfce4-docklike-plugin -y
+apt install matchbox-keyboard -y
+apt update -y
+apt upgrade -y
+echo -e "\e[32m[✓] Xfce4, Plugins, Tools, Packages, Installed Successfully.\e[0m"
+echo -e "\n"
+sleep 3
+clear
+
+echo -e "\e[36m[+] Installing Boxvidra Emulator Programs, Browsers, Etc..\e[0m"
+echo -e "\n"
+pkg install gimp -y
+pkg install mpv -y
+pkg install firefox -y
+pkg install vlc -y
+pkg install abiword -y
+apt install ristretto -y
+echo -e "\n"
+echo -e "\e[32m[✓] Boxvidra Emulator Programs, Browsers, Other Applications Installed Successfully.\e[0m"
+sleep 3
+clear
+
+# Configuration apps menu
+dialog_menu "\Z6Select A Configuration Application" "" \
+"1" "\Z6WineXF Manager \Z5(non-completed, Recommended For Wow64 Only)" \
+"2" "\Z6Boxvidra Configuration \Z5(non-completed, For Wow64-Box64)"
+
+case $? in
+  1)
+    echo "WineXF Manager is not available on box64-86."
+    ;;
+  2)
+    echo "Installing Boxvidra Configuration Application..."
+    cd /data/data/com.termux/files/usr/glibc/opt/libs/app/boxvidra-cfg/
+    cp -r * /data/data/com.termux/files/home/
+    cd
+    sleep 1
+    clear
+    ;;
+  *)
+    echo "No valid option selected."
+    ;;
+esac
+
+# Install A Theme
+    dialog_menu "\Z6Select A Theme To Install" "" \
+    "1" "\Z6Windows 10 Theme (Light) \Z5(Recommended)" \
+    "2" "\Z6Windows 10 Theme (Dark)" \
+    "3" "\Z6Windows 10 Theme (Red, Gaming) \Z5(Recommended)" \
+    "4" "\Z6Windows 10 Theme (Purple, Space) \Z5(Recommended)" \
+    "5" "\Z6Windows 7 Theme" \
+    "6" "\Z6Windows XP Theme" \
+    "7" "\Z6Windows 95 Theme" 
+case $? in
+1)
+   echo -n "Installing Windows 10 theme (Light) ..."
+
+   wget -q --show-progress -O Windows.10.Light.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Themes/Windows.10.Light.tar.xz
+   tar -xf Windows.10.Light.tar.xz
+   cd 'Windows 10 Light'
+   cp -r .icons /data/data/com.termux/files/home/
+   cp -r .themes /data/data/com.termux/files/home/
+   cp -r APPLICATIONS /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp .config.tar.xz /data/data/com.termux/files/home
+   tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+   cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
+   unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
+   cp -r WALLPAPERS /data/data/com.termux/files/home
+   rm /data/data/com.termux/files/home/.config.tar.xz
+   cd ..
+   rm -r 'Windows 10 Light'
+   rm Windows.10.Light.tar.xz
+   clear
+## Installed Successfully Theme
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice4"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice4/notice4_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice4/notice4_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Windows 10 Theme (Light) Installed Successfully"
+fi
+    sleep 3
+    clear
+    ;;
+2)
+   echo -n "Installing Windows 10 theme (Dark) ..."
+
+   wget -q --show-progress -O Windows.10.Dark.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Themes/Windows.10.Dark.tar.xz
+   tar -xf Windows.10.Dark.tar.xz
+   cd 'Windows 10 Dark'
+   cp -r .icons /data/data/com.termux/files/home/
+   cp -r .themes /data/data/com.termux/files/home/
+   cp -r APPLICATIONS /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp .config.tar.xz /data/data/com.termux/files/home
+   tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+   cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
+   unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
+   cp -r WALLPAPERS /data/data/com.termux/files/home
+   rm /data/data/com.termux/files/home/.config.tar.xz
+   cd ..
+   rm -r 'Windows 10 Dark'
+   rm Windows.10.Dark.tar.xz
+   clear
+   echo -n "Windows 10 theme (Dark) Installed Successfully."
+   sleep 3
+## Installed Successfully Theme
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice5"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice5/notice5_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice5/notice6_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Windows 10 Theme (Dark) Installed Successfully"
+fi
+    sleep 3
+    clear
+    ;;
+3)
+   echo -n "Installing Windows 10 theme (Red, Gaming) ..."
+
+   wget -q --show-progress -O Windows.10.Red.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Themes/Windows.10.Red.tar.xz
+   tar -xf Windows.10.Red.tar.xz
+   cd 'Windows 10 Red'
+   cp -r .icons /data/data/com.termux/files/home/
+   cp -r .themes /data/data/com.termux/files/home/
+   cp -r APPLICATIONS /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp .config.tar.xz /data/data/com.termux/files/home
+   tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+   cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
+   unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
+   cp -r WALLPAPERS /data/data/com.termux/files/home
+   rm /data/data/com.termux/files/home/.config.tar.xz
+   cd ..
+   rm -r 'Windows 10 Red'
+   rm Windows.10.Red.tar.xz
+   clear
+## Installed Successfully Theme
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice8"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice8/notice8_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice8/notice8_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Windows 10 Theme (Red, Gaming) Installed Successfully"
+fi
+    sleep 3
+    clear
+    ;;
+4)
+   echo -n "Installing Windows 10 theme (Purple, Space) ..."
+
+   wget -q --show-progress -O Windows.10.Purple.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-EMULATOR/releases/download/Themes/Windows.10.Purple.tar.xz
+   tar -xf Windows.10.Red.Gaming.tar.xz
+   cd 'Windows 10 Purple'
+   cp -r .icons /data/data/com.termux/files/home/
+   cp -r .themes /data/data/com.termux/files/home/
+   cp -r APPLICATIONS /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp .config.tar.xz /data/data/com.termux/files/home
+   tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+   cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
+   unzip /data/data/com.termux/files/usr/share/icons/Windows-10-master.zip -d /data/data/com.termux/files/usr/share/icons
+   cp -r WALLPAPERS /data/data/com.termux/files/home
+   rm /data/data/com.termux/files/home/.config.tar.xz
+   cd ..
+   rm -r 'Windows 10 Purple'
+   rm Windows.10.Purple.tar.xz
+   clear
+## Installed Successfully Theme
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice7"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice7/notice7_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice7/notice7_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Windows 10 Theme (Purple, Space) Installed Successfully"
+fi
+    sleep 3
+    clear
+    ;;
+5)
+   echo -n "Installing Windows 7 theme..."
+      
+   cd /data/data/com.termux/files/usr/share/icons
+   git clone https://github.com/B00merang-Artwork/Windows-7.git
+   cd
+   wget -q --show-progress -O Windows.7.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Themes/Windows.7.tar.xz
+   tar -xf Windows.7.tar.xz
+   cd 'Windows 7'
+   cp -r .icons/* /data/data/com.termux/files/home/.icons
+   cp -r .themes/* /data/data/com.termux/files/home/.themes
+   cp -r .config /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp -r WALLPAPERS /data/data/com.termux/files/home
+   rm -r 'Windows 7'
+   rm Windows.7.tar.xz
+   clear
+## Installed Successfully Theme
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice4"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice4/notice4_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice4/notice4_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Windows 7 Theme Installed Successfully"
+fi
+    sleep 3
+    clear
+    ;;
+6)
+   echo -n "Installing Windows XP theme ..."
+   
+   wget -q --show-progress -O WindowsXP.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Themes/WindowsXP.tar.xz
+   tar -xf WindowsXP.tar.xz
+   cd 'WindowsXP'
+   cp -r .icons /data/data/com.termux/files/home/
+   cp -r .themes /data/data/com.termux/files/home/
+   cp -r APPLICATIONS /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp .config.tar.xz /data/data/com.termux/files/home
+   tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+   cp Windows-XP-3.1.tar.xz /data/data/com.termux/files/usr/share/icons
+   tar -xf /data/data/com.termux/files/usr/share/icons/Windows-XP-3.1.tar.xz -C /data/data/com.termux/files/usr/share/icons
+   cp -r WALLPAPERS /data/data/com.termux/files/home
+   rm /data/data/com.termux/files/home/.config.tar.xz
+   cd ..
+   rm -r 'WindowsXP'
+   rm WindowsXP.tar.xz
+   clear
+## Installed Successfully Theme
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice5"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice5/notice5_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice5/notice6_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Windows XP Theme Installed Successfully"
+fi
+    sleep 3
+    clear
+    ;;
+7)
+   echo -n "Installing Windows 95 theme ..."
+
+   wget -q --show-progress -O Windows.95.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Themes/Windows.95.tar.xz
+   tar -xf Windows.95.tar.xz
+   cd 'Windows 95'
+   cp -r .icons /data/data/com.termux/files/home/
+   cp -r .themes /data/data/com.termux/files/home/
+   cp -r APPLICATIONS /data/data/com.termux/files/home
+   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp .config.tar.xz /data/data/com.termux/files/home
+   tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
+   cp Chicago95.tar.xz /data/data/com.termux/files/usr/share/icons
+   tar -xf /data/data/com.termux/files/usr/share/icons/Chicago95.tar.xz -C /data/data/com.termux/files/usr/share/icons
+   cp -r WALLPAPERS /data/data/com.termux/files/home
+   rm /data/data/com.termux/files/home/.config.tar.xz
+   cd ..
+   rm -r 'Windows 95'
+   rm Windows.95.tar.xz
+   clear
+## Installed Successfully Theme
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice4"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice4/notice4_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice4/notice4_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Windows 95 Theme Installed Successfully"
+fi
+    sleep 3
+    clear
+   ;;
+esac
+
+## Update Notice
+dialog_msgbox "\Z6Boxvidra Completed Version Patch Notes" "\Z5Completed Update Features That Available :\Zn
+1. Windows 10 Upgraded Themes Available :
+ - Windows 10 Theme (Light)
+ - Windows 10 Theme (Dark)
+ - Windows 10 Theme (Red, Gaming)
+ - Windows 10 Theme (Purple, Space)
+ - Windows 7 Theme
+ - Windows XP Theme
+ - Windows 95 Theme
+2. Startup settings section Is Available 
+3. New wine section (external wine-not completed)
+4. New d3d (vddx) for old games that using old directx :
+ - VDDX 2.0.1
+ - VDDX 1.3.2
+ - VDDX 0.98
+5. New Applications, Tools And Plugins :
+ - Keyboard
+ - Otter browser
+ - Abiword
+ - Gnumeric
+ - Darktable
+ - Ristretto
+ - Edge browser (firefox based on bing)
+ - Gedit
+ - Lenom protection application
+ - Wine programs fixer
+ - System Optimizer
+ - Dockfile Plugin (windows 10 themes)
+ - Etc . . .
+6. Improve boxvidra cfg application
+7. Add Root mode (for root users)
+8. Add mediatek mode (for mediatek devices)
+9. Upgrade Boxvidra scripts for wow64 and box86-64
+10. Upgrade the install bash file
+11. Update And Upgrade The Readme.md (GitHub)
+12. Improve the performance with some games that working with avx and avx2
+13. Other Improvements and upgrades
+\Z5Builds (Very Important) : \Zn
+AVX And AVX2 Is now available for Wow64 Glibc, Some games will works faster than before (only the games that using avx and avx2)
+\Z5New Configuration App (WineXF Manager) By Ms.Edryll (Very Important) : \Zn
+We added a new configuration app that makes you able to change the entire system settings without need the main menu (recommended for wow64 only).
+\Z5Fixes : \Zn
+1. PluseAudio Got fixed
+2. Update Section got fixed
+3. Boxvidra cfg (vddx) got fixed
+\Z5Owner And Developers Of The Emulator : \Zn
+The Owner And The Main Developer : AGENT S-404
+The Sec-Owner : Ms.Edryll
+The Developers : AGENT S-404 , AGENT 301 , AGENT 17 , AGENT 202 , Ms.Edryll , AGENT 1009 , AGENT 1008"
+
+## Done
+mkdir -p "/data/data/com.termux/files/usr/bin/notice10"
+if [ ! -e "/data/data/com.termux/files/usr/bin/notice10/notice10_shown" ]; then
+    touch "/data/data/com.termux/files/usr/bin/notice10/notice10_shown"
+    dialog_msgbox "Boxvidra Emulator Native" \
+        "Boxvidra Emulator Native Installed Successfully, Type boxvidra [--start] or boxvidra-native [--start] To Run The Emu, Use [vidra] To Run The Emu Directly"
+fi
+
+## Closing case structures properly
+case $? in
+    0)
+        ;;
+    255)
+        break
+        ;;
+esac
+
+restore-termux-style
+clear
