@@ -1,0 +1,16 @@
+echo "Fix For Command-not-found"
+sleep 2
+wget -q --show-progress -O https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.box64-86-scripts.tar.xz
+mkdir $PREFIX/glibc/opt
+tar -xf glibc.box64-86-scripts.tar.xz -C $PREFIX/glibc/opt/
+cp $PREFIX/glibc/opt/scripts/boxvidra $PREFIX/bin
+cp $PREFIX/glibc/opt/scripts/vidra $PREFIX/bin
+cp $PREFIX/glibc/opt/scripts/'boxvidra --start' $PREFIX/bin
+chmod +x $PREFIX/glibc/opt/scripts/*
+chmod 777 $PREFIX/bin/boxvidra
+chmod 777 $PREFIX/bin/vidra
+chmod 777 $PREFIX/bin/'boxvidra --start'
+rm glibc.box64-86-scripts.tar.xz
+clear
+echo "Everything Done :)"
+echo "Type boxvidra"
