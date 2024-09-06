@@ -67,6 +67,7 @@ clear
 
 case $? in
 1)
+    clear
     echo -e "\e[36m[+] Installing Boxvidra Box64-86 Glibc\e[0m"
     wget -q --show-progress -O /data/data/com.termux/files/glibc.box64-86.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.box64-86.tar.xz
     sleep 2
@@ -501,5 +502,6 @@ case $? in
         ;;
 esac
 
+cd
 restore-termux-style
 clear
