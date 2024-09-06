@@ -59,16 +59,6 @@ echo -e "\n"
 clear
 
 # Installing The Glibc
-if [ -e $PREFIX/glibc ]; then
-    echo -n "Removing previous glibc. Continue? (Y/n) "
-    read i
-    if [ "$i" = "Y" ] || [ "$i" = "y" ]; then
-        rm -rf $PREFIX/glibc
-    else
-        return 1
-    fi
-fi
-
     dialog_menu "\Z6Select A Glibc To Install" "" \
     "1" "\Z6Install Box64-86 Glibc \Z5(v1.0)" \
     "2" "\Z6Install Wow64 Glibc \Z5(v1.0)" \
