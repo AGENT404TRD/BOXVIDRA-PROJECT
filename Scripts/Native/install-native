@@ -203,6 +203,7 @@ case $? in
   2)
     echo "Installing Boxvidra Configuration Application..."
     cd /data/data/com.termux/files/usr/glibc/opt/libs/app/boxvidra-cfg/
+    mkdir -p ~/Desktop
     cp -r * /data/data/com.termux/files/home/
     cd
     sleep 1
@@ -232,7 +233,7 @@ case $? in
    cp -r .icons /data/data/com.termux/files/home/
    cp -r .themes /data/data/com.termux/files/home/
    cp -r APPLICATIONS /data/data/com.termux/files/home
-   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp PROGRAMS/* ~/Desktop
    cp .config.tar.xz /data/data/com.termux/files/home
    tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
@@ -262,7 +263,7 @@ fi
    cp -r .icons /data/data/com.termux/files/home/
    cp -r .themes /data/data/com.termux/files/home/
    cp -r APPLICATIONS /data/data/com.termux/files/home
-   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp PROGRAMS/* ~/Desktop
    cp .config.tar.xz /data/data/com.termux/files/home
    tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
@@ -294,7 +295,7 @@ fi
    cp -r .icons /data/data/com.termux/files/home/
    cp -r .themes /data/data/com.termux/files/home/
    cp -r APPLICATIONS /data/data/com.termux/files/home
-   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp PROGRAMS/* ~/Desktop
    cp .config.tar.xz /data/data/com.termux/files/home
    tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
@@ -324,7 +325,7 @@ fi
    cp -r .icons /data/data/com.termux/files/home/
    cp -r .themes /data/data/com.termux/files/home/
    cp -r APPLICATIONS /data/data/com.termux/files/home
-   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp PROGRAMS/* ~/Desktop
    cp .config.tar.xz /data/data/com.termux/files/home
    tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
    cp Windows-10-master.zip /data/data/com.termux/files/usr/share/icons
@@ -357,7 +358,7 @@ fi
    cp -r .icons/* /data/data/com.termux/files/home/.icons
    cp -r .themes/* /data/data/com.termux/files/home/.themes
    cp -r .config /data/data/com.termux/files/home
-   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp PROGRAMS/* ~/Desktop
    cp -r WALLPAPERS /data/data/com.termux/files/home
    rm -r 'Windows 7'
    rm Windows.7.tar.xz
@@ -381,7 +382,7 @@ fi
    cp -r .icons /data/data/com.termux/files/home/
    cp -r .themes /data/data/com.termux/files/home/
    cp -r APPLICATIONS /data/data/com.termux/files/home
-   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp PROGRAMS/* ~/Desktop
    cp .config.tar.xz /data/data/com.termux/files/home
    tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
    cp Windows-XP-3.1.tar.xz /data/data/com.termux/files/usr/share/icons
@@ -411,7 +412,7 @@ fi
    cp -r .icons /data/data/com.termux/files/home/
    cp -r .themes /data/data/com.termux/files/home/
    cp -r APPLICATIONS /data/data/com.termux/files/home
-   cp PROGRAMS/* /data/data/com.termux/files/home/Desktop
+   cp PROGRAMS/* ~/Desktop
    cp .config.tar.xz /data/data/com.termux/files/home
    tar -xf /data/data/com.termux/files/home/.config.tar.xz -C /data/data/com.termux/files/home
    cp Chicago95.tar.xz /data/data/com.termux/files/usr/share/icons
