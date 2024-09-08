@@ -190,6 +190,7 @@ pkg install hashdeep -y &>/dev/null
 pkg install mesa-zink virglrenderer-mesa-zink vulkan-loader-android virglrenderer-android -y &>/dev/null
 apt install android-tools -y &>/dev/null
 pkg install python-tkinter -y &>/dev/null
+pkg install qt5-qtbase -y &>/dev/null
 echo -e "\e[32m[✓] Boxvidra Emulator Packages Installed Successfully.\e[0m"
 echo -e "\n"
 sleep 2
