@@ -123,7 +123,7 @@ fi
     wget -q --show-progress -O /data/data/com.termux/files/usr/glibc/glibc.wow64.opt.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.wow64.opt.tar.xz
     sleep 2
     echo -e "\e[33m[i] Extracting wow64 Glibc (Opt) . . .\e[0m"
-    tar -xf /data/data/com.termux/files/usr/glibc/glibc.wow64.tar.xz -C /data/data/com.termux/files/usr/glibc/
+    tar -xf /data/data/com.termux/files/usr/glibc/glibc.wow64.opt.tar.xz -C /data/data/com.termux/files/usr/glibc/
     sleep 2
     echo -e "\e[32m[✓] Boxvidra Emulator Native (Wow64 Opt) Installed Successfully.\e[0m"
     sleep 2
