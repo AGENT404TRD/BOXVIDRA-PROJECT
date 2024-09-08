@@ -151,6 +151,8 @@ fi
 	touch "/data/data/com.termux/files/usr/bin/notice2/notice2_shown"
 	dialog_msgbox "Boxvidra Emulator Native" \
 		"Wow64 Glibc Installed Successfully"
+fi
+    sleep 3
     ;;
 *)
     return 1
