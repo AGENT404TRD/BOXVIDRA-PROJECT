@@ -62,13 +62,13 @@ clear
 
 # Installing The Glibc
     dialog_menu "\Z6Select A Glibc To Install" "" \
-    "1" "\Z6Install Box64-86 Glibc \Z5(v1.0, Available)" \
-    "2" "\Z6Install Wow64 Glibc \Z5(v1.0, Not Available)" \
+    "1" "\Z6Install Box64-86 Glibc \Z5(v1.0)" \
+    "2" "\Z6Install Wow64 Glibc \Z5(v1.0)" \
 
 case $? in
 1)
     clear
-    echo -e "\e[36m[+] Installing Boxvidra Box64-86 Glibc\e[0m"
+    echo -e "\e[36m[+] Installing Boxvidra Emulator Native (Box64-86) Glibc\e[0m"
     wget -q --show-progress -O /data/data/com.termux/files/glibc.box64-86.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.box64-86.tar.xz
     sleep 2
     echo -e "\e[33m[i] Extracting Box64-86 Glibc . . .\e[0m"
@@ -111,15 +111,46 @@ fi
     sleep 3
     ;;
 2)
-## Wow64 Is Not Available
-    mkdir -p "/data/data/com.termux/files/usr/bin/notice3"
-    if [ ! -e "/data/data/com.termux/files/usr/bin/notice3/notice3_shown" ]; then
-	touch "/data/data/com.termux/files/usr/bin/notice3/notice3_shown"
-	dialog_msgbox "Boxvidra Emulator Native" \
-		"Wow64 Glibc Is Not Available At The Moment, Install Box64-86 Glibc."
-fi
-    sleep 1
     clear
+    echo -e "\e[36m[+] Installing Boxvidra Emulator Native (Wow64) Glibc\e[0m"
+    wget -q --show-progress -O /data/data/com.termux/files/glibc.wow64.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.wow64.tar.xz
+    sleep 2
+    echo -e "\e[33m[i] Extracting Wow64 Glibc . . .\e[0m"
+    tar -xf /data/data/com.termux/files/glibc.wow64.tar.xz -C /data/data/com.termux/files/
+    sleep 2
+    echo -e "\e[32m[✓] Boxvidra Emulator Native (Wow64 Glibc-Divided) Installed Successfully.\e[0m"
+    sleep 2
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc/glibc.wow64.opt.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.wow64.opt.tar.xz
+    sleep 2
+    echo -e "\e[33m[i] Extracting wow64 Glibc (Opt) . . .\e[0m"
+    tar -xf /data/data/com.termux/files/usr/glibc/glibc.wow64.tar.xz -C /data/data/com.termux/files/usr/glibc/
+    sleep 2
+    echo -e "\e[32m[✓] Boxvidra Emulator Native (Wow64 Opt) Installed Successfully.\e[0m"
+    sleep 2
+    wget -q --show-progress -O /data/data/com.termux/files/usr/glibc/opt/glibc.wow64.scripts.tar.xz https://github.com/AGENT404TRD/BOXVIDRA-PROJECT/releases/download/Native-Glibc/glibc.wow64.scripts.tar.xz
+    sleep 2
+    echo -e "\e[33m[i] Extracting Wow64 Glibc (Scripts) . . .\e[0m"
+    tar -xf /data/data/com.termux/files/usr/glibc/opt/glibc.wow64.scripts.tar.xz -C /data/data/com.termux/files/usr/glibc/opt/
+    sleep 2
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra /data/data/com.termux/files/usr/bin
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra-native /data/data/com.termux/files/usr/bin
+    cp /data/data/com.termux/files/usr/glibc/opt/scripts/vidra /data/data/com.termux/files/usr/bin
+    chmod +x /data/data/com.termux/files/usr/glibc/opt/scripts/*
+    chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
+    chmod 777 /data/data/com.termux/files/usr/bin/boxvidra-native
+    chmod 777 /data/data/com.termux/files/usr/bin/vidra
+    rm /data/data/com.termux/files/glibc.wow64.tar.xz
+    rm /data/data/com.termux/files/usr/glibc/opt/glibc.wow64.scripts.tar.xz
+    rm /data/data/com.termux/files/usr/glibc/glibc.wow64.opt.tar.xz    
+    sleep 3
+    echo -e "\n"
+    clear
+## Installed Successfully Wow64
+    mkdir -p "/data/data/com.termux/files/usr/bin/notice2"
+    if [ ! -e "/data/data/com.termux/files/usr/bin/notice2/notice2_shown" ]; then
+	touch "/data/data/com.termux/files/usr/bin/notice2/notice2_shown"
+	dialog_msgbox "Boxvidra Emulator Native" \
+		"Wow64 Glibc Installed Successfully"
     ;;
 *)
     return 1
@@ -198,8 +229,15 @@ dialog_menu "\Z6Select A Configuration Application" "" \
 
 case $? in
   1)
-    echo "WineXF Manager is not available on box64-86."
-    ;;
+  echo -n "Installing WineXF-Manager Configuration Application . . ."
+   
+  cd /data/data/com.termux/files/usr/glibc/opt/libs/winexf-manager/
+  mkdir -p ~/Desktop
+  cp * ~/Desktop
+  cd
+  sleep 1
+  clear
+  ;;
   2)
     echo "Installing Boxvidra Configuration Application..."
     cd /data/data/com.termux/files/usr/glibc/opt/libs/app/boxvidra-cfg/
