@@ -473,7 +473,7 @@ fi
 fi
 
 # Permission for usr
-chmod -R +x /data/data/com.termux/files/usr/
+chmod -R +x /data/data/com.termux/files/usr/bin/
 echo "Permissions have been set for the 'usr' directory."
 
     sleep 3
