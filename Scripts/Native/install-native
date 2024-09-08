@@ -471,6 +471,11 @@ fi
 	dialog_msgbox "Boxvidra Emulator Native" \
 		"Windows 95 Theme Installed Successfully"
 fi
+
+# Permission for usr
+chmod -R +x /data/data/com.termux/files/usr/
+echo "Permissions have been set for the 'usr' directory."
+
     sleep 3
     clear
    ;;
