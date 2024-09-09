@@ -136,6 +136,7 @@ fi
     cp /data/data/com.termux/files/usr/glibc/opt/scripts/boxvidra-native /data/data/com.termux/files/usr/bin
     cp /data/data/com.termux/files/usr/glibc/opt/scripts/vidra /data/data/com.termux/files/usr/bin
     chmod +x /data/data/com.termux/files/usr/glibc/opt/scripts/*
+    chmod +x /data/data/com.termux/files/usr/bin/*
     chmod 777 /data/data/com.termux/files/usr/bin/boxvidra
     chmod 777 /data/data/com.termux/files/usr/bin/boxvidra-native
     chmod 777 /data/data/com.termux/files/usr/bin/vidra
